@@ -17,99 +17,25 @@ from typing import Optional, Dict, Sequence
 import transformers
 from torch.utils.data import Dataset
 from dataclasses import dataclass, field
+import click
+
+"""deepspeed --num_gpus 8 code/finetune_llama.py"""
 
 KEY_TYPE = "type"
 KEY_INSTANCES = "instances"
-ds_config = "ds_config_zero3.json"
+ds_config = "config/ds_config_zero3.json"
 do_train = True
-checkpoint = None
 IGNORE_INDEX=-100
-MAX_LENGTH=702
 DEFAULT_PAD_TOKEN = "[PAD]"
 DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
-
-# sanity check over the fields of json file
-with open('llama_ref_data_april_10.json') as fin:
-    json_data = json.load(fin)
-    if KEY_TYPE not in json_data.keys():
-        raise ValueError(
-            f'"{KEY_TYPE}" field must be specified for data, e.g.'
-            '{\n'
-            f'   "{KEY_TYPE}: "text2text",\n'
-            f'   "{KEY_INSTANCES}": [\n'
-            '       { "text": "Sentence 1: This is a sentence." }\n'
-            '       { "text": "Sentence 2: This is another sentence." }\n'
-            f'   ]\n'
-            '}'
-        )
-
-# Load the dataset using the HuggingFace dataset library
-extensions = "json"
-raw_dataset = load_dataset(
-    extensions,
-    data_files=['llama_ref_data_april_10.json'],
-    field=KEY_INSTANCES,
-    split="train",
-    use_auth_token=None,
-)
-
-print(raw_dataset)
-
-def _tokenize_fn(strings: Sequence[str], tokenizer: transformers.PreTrainedTokenizer) -> Dict:
-    """Tokenize a list of strings."""
-    tokenized_list = [
-        tokenizer(
-            text,
-            return_tensors="pt",
-            padding="max_length",
-            max_length=MAX_LENGTH,
-            truncation=True,
-        )
-        for text in strings
-    ]
-    input_ids = labels = [tokenized.input_ids[0] for tokenized in tokenized_list]
-    input_ids_lens = labels_lens = [
-        tokenized.input_ids.ne(tokenizer.pad_token_id).sum().item() for tokenized in tokenized_list
-    ]
-    return dict(
-        input_ids=input_ids,
-        labels=labels,
-        input_ids_lens=input_ids_lens,
-        labels_lens=labels_lens,
-    )
-
-def preprocess(sources, targets, tokenizer):
-    # remove pairs where at least one record is None
-    examples = [s + t for s, t in zip(sources, targets)]
-    examples_tokenized, sources_tokenized = [_tokenize_fn(strings, tokenizer) for strings in (examples, sources)]
-    input_ids = examples_tokenized["input_ids"]
-    labels = copy.deepcopy(input_ids)
-    for label, source_len in zip(labels, sources_tokenized["input_ids_lens"]):
-        label[:source_len] = IGNORE_INDEX
-    return dict(input_ids=input_ids, labels=labels)
-
-def smart_tokenizer_and_embedding_resize(
-    special_tokens_dict: Dict,
-    tokenizer: transformers.PreTrainedTokenizer,
-    model: transformers.PreTrainedModel,
-):
-    """Resize tokenizer and embedding.
-    Note: This is the unoptimized version that may make your embedding size not be divisible by 64.
-    """
-    num_new_tokens = tokenizer.add_special_tokens(special_tokens_dict)
-    model.resize_token_embeddings(len(tokenizer))
-
-    if num_new_tokens > 0:
-        input_embeddings = model.get_input_embeddings().weight.data
-        output_embeddings = model.get_output_embeddings().weight.data
-
-        input_embeddings_avg = input_embeddings[:-num_new_tokens].mean(dim=0, keepdim=True)
-        output_embeddings_avg = output_embeddings[:-num_new_tokens].mean(dim=0, keepdim=True)
-
-        input_embeddings[-num_new_tokens:] = input_embeddings_avg
-        output_embeddings[-num_new_tokens:] = output_embeddings_avg
+max_length = 720
+f = 'data/llama_src_data.json'
+output_dir = 'finetune_llama_src_april_12_continue'
+padding_strategy = 'left'
+# checkpoint = '/data/finetune_llama_src_april_12/checkpoint-246'
+num_epoch = 5
 
 class SupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""
@@ -151,12 +77,98 @@ def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer) -> 
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset, eval_dataset=None, data_collator=data_collator)
 
+def preprocess(sources, targets, tokenizer):
+    # remove pairs where at least one record is None
+    examples = [s + t for s, t in zip(sources, targets)]
+    examples_tokenized, sources_tokenized = [_tokenize_fn(strings, tokenizer) for strings in (examples, sources)]
+    input_ids = examples_tokenized["input_ids"]
+    labels = copy.deepcopy(input_ids)
+    for label, source_len in zip(labels, sources_tokenized["input_ids_lens"]):
+        label[:source_len] = IGNORE_INDEX
+    return dict(input_ids=input_ids, labels=labels)
+
+def smart_tokenizer_and_embedding_resize(
+    special_tokens_dict: Dict,
+    tokenizer: transformers.PreTrainedTokenizer,
+    model: transformers.PreTrainedModel,
+):
+    """Resize tokenizer and embedding.
+    Note: This is the unoptimized version that may make your embedding size not be divisible by 64.
+    """
+    num_new_tokens = tokenizer.add_special_tokens(special_tokens_dict)
+    model.resize_token_embeddings(len(tokenizer))
+
+    if num_new_tokens > 0:
+        input_embeddings = model.get_input_embeddings().weight.data
+        output_embeddings = model.get_output_embeddings().weight.data
+
+        input_embeddings_avg = input_embeddings[:-num_new_tokens].mean(dim=0, keepdim=True)
+        output_embeddings_avg = output_embeddings[:-num_new_tokens].mean(dim=0, keepdim=True)
+
+        input_embeddings[-num_new_tokens:] = input_embeddings_avg
+        output_embeddings[-num_new_tokens:] = output_embeddings_avg
+
+# @click.command()
+# @click.option('-f')
+# @click.option('-max_length', default="702 for English and 720 for Chinese")
+# @click.option('-output_dir')
+# def main(f, max_length, output_dir):
+def _tokenize_fn(strings: Sequence[str], tokenizer: transformers.PreTrainedTokenizer) -> Dict:
+    """Tokenize a list of strings."""
+    tokenized_list = [
+        tokenizer(
+            text,
+            return_tensors="pt",
+            padding="max_length",
+            max_length=max_length,
+            truncation=True,
+        )
+        for text in strings
+    ]
+    input_ids = labels = [tokenized.input_ids[0] for tokenized in tokenized_list]
+    input_ids_lens = labels_lens = [
+        tokenized.input_ids.ne(tokenizer.pad_token_id).sum().item() for tokenized in tokenized_list
+    ]
+    return dict(
+        input_ids=input_ids,
+        labels=labels,
+        input_ids_lens=input_ids_lens,
+        labels_lens=labels_lens,
+    )
+
+# sanity check over the fields of json file
+with open(f) as fin:
+    json_data = json.load(fin)
+    if KEY_TYPE not in json_data.keys():
+        raise ValueError(
+            f'"{KEY_TYPE}" field must be specified for data, e.g.'
+            '{\n'
+            f'   "{KEY_TYPE}: "text2text",\n'
+            f'   "{KEY_INSTANCES}": [\n'
+            '       { "text": "Sentence 1: This is a sentence." }\n'
+            '       { "text": "Sentence 2: This is another sentence." }\n'
+            f'   ]\n'
+            '}'
+        )
+
+# Load the dataset using the HuggingFace dataset library
+extensions = "json"
+raw_dataset = load_dataset(
+    extensions,
+    data_files=[f],
+    field=KEY_INSTANCES,
+    split="train",
+    use_auth_token=None,
+)
+
+print(raw_dataset)
+
 
 config = AutoConfig.from_pretrained('decapoda-research/llama-7b-hf')
 tokenizer = transformers.AutoTokenizer.from_pretrained(
         "decapoda-research/llama-7b-hf",
-        model_max_length=MAX_LENGTH,
-        padding_side="right",
+        model_max_length=max_length,
+        padding_side=padding_strategy,
         use_fast=False,
     )
 
@@ -181,12 +193,12 @@ tokenizer.add_special_tokens(
 )
 
 data_module = make_supervised_data_module(tokenizer=tokenizer)
-training_args = TrainingArguments(output_dir="LLama_finetune_april_8", evaluation_strategy='no', per_device_train_batch_size=1,\
-                                         gradient_accumulation_steps=16, learning_rate=2e-5, weight_decay=0, num_train_epochs=3, warmup_ratio=0.03,\
+training_args = TrainingArguments(output_dir=output_dir, evaluation_strategy='no', per_device_train_batch_size=1,\
+                                        gradient_accumulation_steps=16, learning_rate=2e-5, weight_decay=0, num_train_epochs=num_epoch, warmup_ratio=0,\
                                         logging_strategy="steps", logging_first_step=True, save_strategy='epoch', save_total_limit=3, seed=42,\
                                         run_name='wandb', load_best_model_at_end=False, greater_is_better=False, deepspeed=ds_config, log_on_each_node=False,\
-                                        logging_steps=1, fp16=True, tf32=True, lr_scheduler_type="cosine")
-                                 
+                                        logging_steps=1, fp16=True, lr_scheduler_type="cosine") # tf32=True -> only for A100
+                                    
 print("Start the trainer")
 
 if do_train:
@@ -208,3 +220,6 @@ if do_train:
     trainer.log_metrics("train", metrics)
     trainer.save_metrics("train", metrics)
     trainer.save_state()
+
+# if __name__ == "__main__":
+#     main()
