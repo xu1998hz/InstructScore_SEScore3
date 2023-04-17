@@ -1,4 +1,3 @@
-from mt_metrics_eval import data
 import click
 import json
 import torch
@@ -54,6 +53,7 @@ tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf', mode
 @click.option('-end_index', type=int)
 def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index):
     if not loaded:
+        from mt_metrics_eval import data
         if not os.path.isdir(f'test_{wmt}_{lang}'):
             os.makedirs(f'test_{wmt}_{lang}')
             os.makedirs(f'test_{wmt}_{lang}/src')
