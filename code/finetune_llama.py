@@ -31,11 +31,10 @@ DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
 max_length = 720
-f = 'data/llama_src_data.json'
-output_dir = 'finetune_llama_src_april_12_continue'
-padding_strategy = 'left'
-# checkpoint = '/data/finetune_llama_src_april_12/checkpoint-246'
-num_epoch = 5
+f = 'data/german_llama_ref_data.json'
+output_dir = 'finetune_llama_ref_german_april_18'
+padding_strategy = 'right'
+num_epoch = 3
 
 class SupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""
@@ -108,11 +107,6 @@ def smart_tokenizer_and_embedding_resize(
         input_embeddings[-num_new_tokens:] = input_embeddings_avg
         output_embeddings[-num_new_tokens:] = output_embeddings_avg
 
-# @click.command()
-# @click.option('-f')
-# @click.option('-max_length', default="702 for English and 720 for Chinese")
-# @click.option('-output_dir')
-# def main(f, max_length, output_dir):
 def _tokenize_fn(strings: Sequence[str], tokenizer: transformers.PreTrainedTokenizer) -> Dict:
     """Tokenize a list of strings."""
     tokenized_list = [
@@ -163,7 +157,6 @@ raw_dataset = load_dataset(
 
 print(raw_dataset)
 
-
 config = AutoConfig.from_pretrained('decapoda-research/llama-7b-hf')
 tokenizer = transformers.AutoTokenizer.from_pretrained(
         "decapoda-research/llama-7b-hf",
@@ -181,9 +174,6 @@ if tokenizer.pad_token is None:
         model=model,
     )
 
-# print(tokenizer.pad_token)
-
-# if "llama" in model_args.model_name_or_path:
 tokenizer.add_special_tokens(
     {
         "eos_token": DEFAULT_EOS_TOKEN,
@@ -219,7 +209,4 @@ if do_train:
 
     trainer.log_metrics("train", metrics)
     trainer.save_metrics("train", metrics)
-    trainer.save_state()
-
-# if __name__ == "__main__":
-#     main()
+    # trainer.save_state()
