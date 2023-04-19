@@ -28,3 +28,21 @@ sudo reboot
 conda install -c conda-forge cudnn==8
 
 pip3 install -r requirements.txt
+
+# mounting the new file system
+
+lsblk # run this command to find the name of the attached volume
+sudo mkdir /data
+sudo mount {device_name} /data
+
+# to mount the disk permanently
+sudo cp /etc/fstab /etc/fstab.orig
+sudo lsblk -o +UUID # to get the UUID for the disk, step 2
+sudo vim /etc/fstab
+
+# add the below line in /etc/fstab file, UUID looks like: aebf131c-6957-451e-8d34-ec978d9581ae
+UUID={UUID from step 2}  /data  xfs  defaults,nofail  0  2
+
+# change permissions
+sudo chgrp adm /data
+sudo chmod g+w /data
