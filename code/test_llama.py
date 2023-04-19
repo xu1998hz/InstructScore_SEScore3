@@ -53,6 +53,16 @@ tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf', mode
 @click.option('-end_index', type=int)
 def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index):
     if not loaded:
+        if lang == 'zh-en':
+            lang_code = 'Chinese-to-English'
+        elif lang == 'en-de':
+            lang_code = 'English-to-German'
+        elif lang == 'en-ru':
+            lang_code = 'English-to-Russian'
+        else:
+            print("Language dir is not existed")
+            exit(1)
+
         from mt_metrics_eval import data
         if not os.path.isdir(f'test_{wmt}_{lang}'):
             os.makedirs(f'test_{wmt}_{lang}')
@@ -60,7 +70,7 @@ def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index
             os.makedirs(f'test_{wmt}_{lang}/ref')
             index = ckpt_addr.split('-')[-1]
             print(index)
-            os.makedirs(f'test_{wmt}_{lang}/output_{index}')
+            os.makedirs(f'test_{wmt}_{lang}/SEScore3_output_{index}')
 
         evs = data.EvalSet(wmt, lang)
         mqm_scores = evs.Scores('seg', 'mqm')
@@ -78,8 +88,8 @@ def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index
                             ref = evs.sys_outputs[evs.std_ref][index]
                             cand = evs.sys_outputs[sys_name][index]
                             src = evs.src[index]
-                            ref_prompt=f"You are evaluating Chinese-to-English Machine translation task. The correct translation is \"{ref}\". The model generated translation is \"{cand}\". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed."
-                            src_prompt=f"You are evaluating Chinese-to-English Machine translation task. The source is \"{src}\". The model generated translation is \"{cand}\". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed."
+                            ref_prompt=f"You are evaluating {lang_code} Machine translation task. The correct translation is \"{ref}\". The model generated translation is \"{cand}\". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed."
+                            src_prompt=f"You are evaluating {lang_code} Machine translation task. The source is \"{src}\". The model generated translation is \"{cand}\". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed."
 
                             final_ref_dict["instances"]+=[{"input": ref_prompt, "output": score}]
                             final_src_dict["instances"]+=[{"input": src_prompt, "output": score}]
@@ -122,7 +132,7 @@ def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index
         print("Loaded in model and tokenizer!")
         
         index = ckpt_addr.split('-')[-1]
-        save_file = open(f'test_{wmt}_{lang}/output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}.txt', 'w')
+        save_file = open(f'test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}.txt', 'w')
 
         global_step=0
         with torch.no_grad():
