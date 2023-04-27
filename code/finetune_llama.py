@@ -31,8 +31,8 @@ DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
 max_length = 720
-f = 'data/german_llama_ref_data.json'
-output_dir = 'finetune_llama_ref_german_april_18'
+f = 'data/russian_llama_ref_data.json'
+output_dir = 'finetune_llama_ref_russian_april_18'
 padding_strategy = 'right'
 num_epoch = 3
 
