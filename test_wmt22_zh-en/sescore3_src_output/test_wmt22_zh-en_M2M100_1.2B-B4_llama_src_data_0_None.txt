@@ -1,0 +1,1049 @@
+0	You are evaluating Chinese-to-English Machine translation task. The source is "是否有途径处罚他". The model generated translation is "Is there a way to punish him?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains no error.[SEP_WENDA]1	You are evaluating Chinese-to-English Machine translation task. The source is "以免再次发生这样的事情". The model generated translation is "In order not to happen again.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "not to happen again"
+Explanation for error 1: The incorrect translation omits the subject "such incidents" and the verb "occur" from the original sentence, which leads to a grammatically incorrect and meaningful statement.[SEP_WENDA]2	You are evaluating Chinese-to-English Machine translation task. The source is "又或者餐厅还要多久会准备好？可不可以帮我问下？". The model generated translation is "How long will the restaurant be ready?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "How long will the restaurant be ready?"
+Explanation for error 1: The incorrect translation misses the meaning of "还要多久" which means "will take a long time" and changes the meaning of the sentence. The correct translation should be "How long will it take to prepare?"[SEP_WENDA]3	You are evaluating Chinese-to-English Machine translation task. The source is "浙大学术年会上学生唱主角 研究成果让人脑洞大开-新华网". The model generated translation is "Zhejiang University art annual student singing protagonist research results open the mind - new Chinese network". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "student singing"
+Explanation for error 4: The source text mentions "student research," not "student singing."
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "new Chinese network"
+Explanation for error 4: The source text mentions "Chinese-to-English Machine translation task," not "new Chinese network."
+Error type 3: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "art annual"
+Explanation for error 4: The source text mentions "academic conference," not "art annual."
+Error type 4: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "open the mind"
+Explanation for error 4: The source text mentions "brain opens wide," not "mind opens."[SEP_WENDA]4	You are evaluating Chinese-to-English Machine translation task. The source is "用空气来洗手，哈口气判断疾病，精确搜寻雾霾来源 昨天晚上，在浙江大学2016年学术年会开幕式上，一系列脑洞大开的学术成果获得表彰。". The model generated translation is "Wash hands with air, judge diseases, accurately search for the source of fog Yesterday evening, at the opening ceremony of the 2016 academic annual meeting of Zhejiang University, a series of academic achievements were recognized.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "Wash hands with air"
+Explanation for error 2: The incorrect translation omits the "to" after "wash hands," which changes the meaning of the sentence.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "judge diseases"
+Explanation for error 2: The incorrect translation uses "judge" instead of "diagnose," which is not the appropriate term for medical context.[SEP_WENDA]5	You are evaluating Chinese-to-English Machine translation task. The source is "这些成果的主要研究者都是学生，研究覆盖了环境、机械、能源、医疗、生命科学、人文教育等各大领域，同学们从一个好奇的点子开始，创造出了许多具有应用价值的高端发明，其中一些项目已在国内国际获奖。". The model generated translation is "The main researchers of these achievements are students, research covering environmental, mechanical, energy, medical, life sciences, humanities and other major fields, students from a curious idea to create many high-end inventions with applied value, some of which have been awarded internationally.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 2: "research covering" should be "research covering"
+Explanation for error 2: The incorrect translation uses a comma instead of a period or semicolon, which is a minor grammar error.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 2: "from a curious idea" should be "from a curiosity"
+Explanation for error 2: The incorrect translation omits the word "curiosity" and replaces it with "idea," which is a minor error in content.[SEP_WENDA]6	You are evaluating Chinese-to-English Machine translation task. The source is "生物传感器：你的家庭体检医生". The model generated translation is "Biosensors: Your Home Medical Examiner". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Your Home Medical Examiner"
+Explanation for error 2: The incorrect translation uses "Your Home Medical Examiner" instead of "Your family doctor," which changes the meaning and makes it confusing for the reader.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "Biosensors"
+Explanation for error 2: The incorrect translation uses "Biosensors" instead of "Biomedical sensors," which is a less accurate representation of the source text. However, the meaning is still understandable.[SEP_WENDA]7	You are evaluating Chinese-to-English Machine translation task. The source is "生物医学工程学院博士生张迪鸣团队现场展示了一个智能手机端的生物传感器，大小只有智能手机的一半。". The model generated translation is "Dr. Zhang Diong, a PhD student at the College of Biomedical Engineering, showed a biosensor on the smartphone side, only half the size of a smartphone.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 1: "on the smartphone side" instead of "for smartphones"
+Explanation for error 1: The incorrect translation uses "on the smartphone side" instead of "for smartphones," which is a minor stylistic error that does not change the meaning of the sentence but may be noticed by the reader.[SEP_WENDA]8	You are evaluating Chinese-to-English Machine translation task. The source is "“你只需要轻轻呼一口气，这套仪器就能从你呼出的气体成分中，初步检测身体健康状况 。 ”". The model generated translation is "“You just have to breathe a light breath, and this set of instruments will be able to preliminarily detect your health from the composition of the gas you breathe.”". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "breathe a light breath"
+Explanation for error 2: The phrase "breathe a light breath" is awkward and not idiomatic in English; the correct phrase should be "breathe in deeply."
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "set of instruments"
+Explanation for error 2: The source text uses "仪器" which should be translated as "device," not "instruments." The correct translation should be "device."[SEP_WENDA]9	You are evaluating Chinese-to-English Machine translation task. The source is "张迪鸣介绍说，这套传感器与智能手机相连，呼出气体后，健康报告就会显示在手机上。". The model generated translation is "Zhang said that the sensor is connected to the smartphone, and after exhaling the gas, the health report will appear on the phone.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "after exhaling the gas" instead of "after inhaling the gas"
+Explanation for error 1: The incorrect translation changes the meaning of the sentence by stating that the health report will appear on the phone after exhaling the gas, instead of inhaling the gas as stated in the source sentence.[SEP_WENDA]10	You are evaluating Chinese-to-English Machine translation task. The source is "市场上能够检测健康状况的智能手环，一般检测的是温度、脉搏等物理参数。". The model generated translation is "The smart bracelet that can detect health conditions on the market, generally detects physical parameters such as temperature, pulse.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "The smart bracelet that can detect health conditions on the market,"
+Explanation for error 2: The incorrect translation has a grammatical error in the sentence structure, making it difficult to understand. The correct translation should be "A smartwatch that can detect health conditions on the market."
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 2: "generally detects"
+Explanation for error 2: The incorrect translation is missing the word "usually" from the source sentence, which slightly changes the meaning. The correct translation should be "usually detects".[SEP_WENDA]11	You are evaluating Chinese-to-English Machine translation task. The source is "而这套生物传感器运用了石墨烯这种新型材料，它的目标物是化学元素，敏锐的“嗅觉”让它能更深度、准确地体现身体健康状况。". The model generated translation is "The biosensor uses a new type of graphene material, its target material is chemical elements, and its sharp "smell" allows it to reflect the health of the body more deeply and accurately.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "sharp "smell""
+Explanation for error 2: The incorrect translation uses "sharp "smell"" instead of "precise "olfactory,"" which changes the meaning of the sentence and introduces new information not present in the source text.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "reflect the health of the body"
+Explanation for error 2: The incorrect translation uses "reflect the health of the body" instead of "indicate the body's health conditions," which does not accurately represent the source text and changes the meaning of the sentence.[SEP_WENDA]12	You are evaluating Chinese-to-English Machine translation task. The source is "智能手术灯：医生的高能眼睛". The model generated translation is "Smart Surgery Lights: The Doctor’s High Energy Eyes". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "Smart Surgery Lights"
+Explanation for error 2: The correct term should be "intelligent surgical lamps" instead of "smart surgery lights".
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "The Doctor's High Energy Eyes"
+Explanation for error 2: The correct translation should be "surgeons' high-performance eyes" instead of "the doctor's high energy eyes".[SEP_WENDA]13	You are evaluating Chinese-to-English Machine translation task. The source is "除了智能手机，手术室里也用起了智能手术灯。". The model generated translation is "In addition to smart phones, smart lights are also used in the surgery room.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "smart phones" instead of "smartphones"
+Explanation for error 2: The use of "smart phones" instead of the more commonly used term "smartphones" is a minor stylistic error that does not change the meaning of the sentence.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "surgery room" instead of "operating room"
+Explanation for error 2: The use of "surgery room" instead of "operating room" is a minor error that does not accurately represent the source text, but the meaning is still understandable.[SEP_WENDA]14	You are evaluating Chinese-to-English Machine translation task. The source is "这项发明在今年第44届瑞士日内瓦国际发明展中获得银奖。". The model generated translation is "The invention won the Silver Prize at the 44th Geneva International Invention Show this year.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 1: "The invention" instead of "This invention"
+Explanation for error 1: The use of "the" before "invention" is unnecessary and makes the sentence sound less natural.[SEP_WENDA]15	You are evaluating Chinese-to-English Machine translation task. The source is "光电科学与工程学院硕士生朱林靖、申俊飞团队在传统手术灯的缺陷中开启了新思路，发明了智能LED手术无影灯。". The model generated translation is "Zhou Lin Yuan, a master's student at the Faculty of Optoelectronic Science and Engineering, and the team of Shenzhen Fei opened a new way of thinking in the defects of traditional surgical lights, and invented the intelligent LED surgical light.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "a master's student at the Faculty of Optoelectronic Science and Engineering"
+Explanation for error 2: The correct translation should be "a master's student at the School of Optoelectronic Science and Engineering" to maintain the same level of formality as the original text.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "Shenzhen Fei"
+Explanation for error 2: The correct translation should be "Shun-Chen Feng" to accurately represent the Chinese name of the team.[SEP_WENDA]16	You are evaluating Chinese-to-English Machine translation task. The source is "“很多疾病早期检测、切除不到位，跟医生手术室用的灯有关 。 ”". The model generated translation is ""Many diseases are not detected and removed early, and are related to the lights used in the doctor's surgery room."". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "not detected and removed early"
+Explanation for error 2: The incorrect translation omits the idea of "cutting out" (去除) from the source sentence, which is an essential part of the meaning.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "doctor's surgery room"
+Explanation for error 2: The incorrect translation uses "doctor's surgery room" instead of the more appropriate and accurate "clinic" (医生医疗室).[SEP_WENDA]17	You are evaluating Chinese-to-English Machine translation task. The source is "申俊飞说，比如癌症早期检查时，医生如果不能及时看清所有肿瘤组织，那么之后癌细胞还会扩散。". The model generated translation is "Shen Fei said that, for example, when examining cancer early, if doctors can not see all the tumor tissue in time, then the cancer cells will spread.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "said that" instead of "stated"
+Explanation for error 2: The use of "said that" is less formal and less accurate than "stated" in this context.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "can not" instead of "cannot"
+Explanation for error 2: The use of "can not" is grammatically incorrect in this context; it should be "cannot."[SEP_WENDA]18	You are evaluating Chinese-to-English Machine translation task. The source is "这种智能手术灯有四个灯盘，通过调节光谱，来增强不同组织在光照下的区别度。". The model generated translation is "This intelligent surgical lamp has four discs that enhance the difference between different organizations under light by adjusting the spectrum.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Terminology is non-standard or does not fit context. Terminology is used inconsistently
+Major/minor: Major
+Error location 1: "discs" instead of "lenses"
+Explanation for error 1: The incorrect translation uses "discs" instead of "lenses," which changes the meaning and makes it confusing for the reader. The correct term should be "lenses" to accurately represent the source text.[SEP_WENDA]19	You are evaluating Chinese-to-English Machine translation task. The source is "在手术过程中，医生可以根据手术需要和个人习惯，随时调节光斑的大小、光亮程度、光谱、颜色均匀性以及无影率。". The model generated translation is "During the procedure, the doctor can adjust the size, brightness, spectrum, color uniformity and shadowlessness depending on the needs of the surgery and personal habits at any time.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Terminology is non-standard or does not fit context. Terminology is used inconsistently
+Major/minor: Minor
+Error location 1: "shadowlessness" instead of "shadow-free"
+Explanation for error 1: The term "shadowlessness" is not commonly used in this context and is inconsistent with the more commonly used term "shadow-free."[SEP_WENDA]20	You are evaluating Chinese-to-English Machine translation task. The source is "这种智能手术灯已经在浙江大学医学院附属邵逸夫医院、浙江大学医学院附属儿童医院等医院试用，得到较好的反馈。". The model generated translation is "This smart surgical lamp has been tested in Zhejiang University Medical School affiliated Zhejiang University Medical School affiliated hospital, Zhejiang University Medical School affiliated children's hospital and other hospitals, and has received good feedback.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 1: "Zhejiang University Medical School affiliated Zhejiang University Medical School affiliated hospital"
+Explanation for error 1: The repetition of "affiliated" is unnecessary and creates a minor grammatical error.[SEP_WENDA]21	You are evaluating Chinese-to-English Machine translation task. The source is "去年十月，这项发明获得国家挑战杯一等奖。". The model generated translation is "Last October, the invention won the National Challenge Cup first prize.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "invention" instead of "discovery"
+Explanation for error 1: The incorrect translation uses "invention" instead of "discovery," which slightly alters the meaning but does not lead to a significant loss of meaning or confusion.[SEP_WENDA]22	You are evaluating Chinese-to-English Machine translation task. The source is "用空气洗手：省水又酷炫". The model generated translation is "Washing Hands With Air: Water Saving and Cool". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "Water Saving and Cool"
+Explanation for error 2: The incorrect translation omits the phrase "and Thirsty" from the source, which changes the meaning of the sentence.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "Washing Hands With Air"
+Explanation for error 2: The incorrect translation uses the phrase "Washing Hands With Air" instead of the more natural and accurate "Washing hands with air" in English.[SEP_WENDA]23	You are evaluating Chinese-to-English Machine translation task. The source is "普通人洗手就是用水冲，顶多擦点肥皂，挤点洗手液，而李启章等同学则发明了一套“空气洗手装置 ” 。". The model generated translation is "Ordinary people wash their hands with water, scratch a little soap, press a little hand wash, and Li Khalifa and other students invented a set of "air hand washing devices".". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "Ordinary people" instead of "Common people"
+Explanation for error 4: The term "ordinary people" is not an accurate translation of "普通人" which should be "common people".
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "air hand washing devices" instead of "handwashing devices"
+Explanation for error 4: The incorrect translation adds "air" to the original meaning of "handwashing devices", which is not present in the source text.
+Error type 3: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "scratch" instead of "rub"
+Explanation for error 4: The term "scratch" is not an accurate representation of "擦点" which should be "rub".
+Error type 4: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 4: "Li Khalifa" instead of "Li Keqiang"
+Explanation for error 4: The incorrect translation has a misspelling of the Chinese leader's name, which should be "Li Keqiang".[SEP_WENDA]24	You are evaluating Chinese-to-English Machine translation task. The source is "只要站上装置的洗手台，我们的体重就能将空气压缩而出。". The model generated translation is "As long as we stand on the toilet of the device, our weight can compress the air out.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "As long as we stand on the toilet of the device"
+Explanation for error 2: The phrase "站上装置的洗手台" is translated as "the toilet of the device," which is not a proper or clear way to express the concept of a "handwashing device."
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "compress the air out"
+Explanation for error 2: The phrase "压缩空气出" is translated as "compress the air out," which is missing the content of "expelling" from the source sentence. The correct translation should be "expel air from our body."[SEP_WENDA]25	You are evaluating Chinese-to-English Machine translation task. The source is "“就像是一个打气筒。". The model generated translation is "“It’s like a light bulb.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 1: "It's like a light bulb"
+Explanation for error 1: The incorrect translation changes the meaning of the source sentence by replacing "exhalation" with "light bulb," which is not a suitable or accurate representation of the original meaning.[SEP_WENDA]26	You are evaluating Chinese-to-English Machine translation task. The source is "压缩出的空气，在水龙头处形成流体，和水结合在一起。". The model generated translation is "The compressed air forms a fluid in the head of the drone and joins with water.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "in the head of the drone"
+Explanation for error 2: The incorrect translation omits the "at the water dragon's head" location of the compressed air, which changes the meaning of the sentence.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "joins with water"
+Explanation for error 2: The incorrect translation adds "joins with water" which is not present in the source sentence.[SEP_WENDA]27	You are evaluating Chinese-to-English Machine translation task. The source is "这样，我们就能把手洗干净啦 ！ ”". The model generated translation is "So we can wash our hands!”". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "dirt" is missing in the incorrect translation
+Explanation for error 1: The incorrect translation omits the word "dirt" from the source sentence, making the translation slightly less specific but not changing the overall meaning.[SEP_WENDA]28	You are evaluating Chinese-to-English Machine translation task. The source is "显色反应和细菌残留实验证明：通过这种方法洗手的效果，和普通的洗手方法是一样的。". The model generated translation is "Experiments with color reactions and bacterial residues show that the effect of hand washing with this method is the same as with ordinary hand washing methods.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Terminology is non-standard or does not fit context. Terminology is used inconsistently
+Major/minor: Minor
+Error location 1: "color reactions" instead of "color reactions and bacterial residues"
+Explanation for error 1: The incorrect translation omits the mention of "bacterial residues" which is an important part of the source sentence. However, the meaning is still understandable and does not confuse or mislead the reader.[SEP_WENDA]29	You are evaluating Chinese-to-English Machine translation task. The source is "这个装置只需要依靠我们自身的重力作为驱动，既能保证洗净程度，又能节约90%的水，整个过程完全无能耗，节能环保。". The model generated translation is "This device only needs to rely on our own gravity as a drive, both to ensure the level of cleaning, but can save 90% of water, the whole process is completely energy-free, energy-saving and environmentally friendly.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 2: "but can save"
+Explanation for error 2: The conjunction "but" should be replaced with "and" to maintain the original meaning and proper grammar.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "energy-free"
+Explanation for error 2: The term "energy-free" should be replaced with "energy-saving" to maintain the original meaning and proper style.[SEP_WENDA]30	You are evaluating Chinese-to-English Machine translation task. The source is "去年，在第二届全球重大挑战峰会中，这项发明在诸多世界顶尖名校中脱颖而出，获得唯一的金奖。". The model generated translation is "Last year, at the second major global challenge summit, the invention stood out among many of the world’s top universities and won the only gold prize.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "the invention" instead of "the discovery"
+Explanation for error 1: The incorrect translation uses "invention" instead of "discovery," which slightly alters the meaning but does not lead to a significant loss of meaning or confusion.[SEP_WENDA]31	You are evaluating Chinese-to-English Machine translation task. The source is "请尽快安排补回给我，thx". The model generated translation is "Please repair it as soon as possible, thx". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "it" is missing in the incorrect translation
+Explanation for error 1: The incorrect translation omits the word "it" from the source sentence, making the sentence slightly less clear but not changing the overall meaning.[SEP_WENDA]32	You are evaluating Chinese-to-English Machine translation task. The source is "请取消订单并退回现金，不要积分，以后不会再用 #PRS_ORG#！". The model generated translation is "Please cancel your order and refund your money, don’t score, and no longer use #PRS_ORG#!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "don’t score"
+Explanation for error 2: The correct translation should be "don't reward" instead of "don't score" to convey the intended meaning.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "no longer use #PRS_ORG#"
+Explanation for error 2: The correct translation should be "will not use #PRS_ORG# again" instead of "no longer use #PRS_ORG#" to accurately represent the source.[SEP_WENDA]33	You are evaluating Chinese-to-English Machine translation task. The source is "有骨和辣泡菜不适合小朋友吃". The model generated translation is "Cucumbers and peanuts are not suitable for children.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 1: "Cucumbers and peanuts" instead of "Bones and spicy food"
+Explanation for error 1: The incorrect translation has changed the meaning of the original Chinese sentence by replacing "bones" with "cucumbers" and "spicy food" with "peanuts", which are not present in the source text.[SEP_WENDA]34	You are evaluating Chinese-to-English Machine translation task. The source is "如果是，请尽快 order". The model generated translation is "If so, please order as soon as possible.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains no error.[SEP_WENDA]35	You are evaluating Chinese-to-English Machine translation task. The source is "暂时没有，谢谢". The model generated translation is "Not for now, thank you.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 1: "thank you"
+Explanation for error 1: The incorrect translation adds "thank you" which is not present in the source sentence.[SEP_WENDA]36	You are evaluating Chinese-to-English Machine translation task. The source is "他叫我跟你们说他所在的位置#PRS_ORG#". The model generated translation is "He called me to tell you where he was #PRS_ORG#". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "tell you" is missing in the incorrect translation
+Explanation for error 1: The incorrect translation omits the part about telling "you" (the people mentioned in the source text) where he was, but it still conveys the general idea of him sharing his location.[SEP_WENDA]37	You are evaluating Chinese-to-English Machine translation task. The source is "我不等了，取消订单". The model generated translation is "I can't wait and cancel the order.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Wrong word choice
+Major/minor: Major
+Error location 1: "can't wait" instead of "can't stand it"
+Explanation for error 1: The incorrect translation changes the meaning of the original sentence by using "can't wait" instead of "can't stand it," which makes it sound like the person is impatiently waiting for something instead of being frustrated and wanting to cancel the order.[SEP_WENDA]38	You are evaluating Chinese-to-English Machine translation task. The source is "我#PRS_ORG#买了，但是我写错了地址". The model generated translation is "I bought #PRS_ORG# but I wrote the wrong address". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect punctuation
+Major/minor: Minor
+Error location 1: Between # and PRS_ORG#
+Explanation for error 1: There should be no space between the # and PRS_ORG#, making it one word (#PRS_ORG#).[SEP_WENDA]39	You are evaluating Chinese-to-English Machine translation task. The source is "可以更改吗？". The model generated translation is "Can I change?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "Can I change?"
+Explanation for error 1: The incorrect translation omits the "your" in the phrase "can you change?", which changes the meaning of the sentence and makes it less clear.[SEP_WENDA]40	You are evaluating Chinese-to-English Machine translation task. The source is "或取消订单". The model generated translation is "Or cancel an order.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 1: "an" is missing before "order"
+Explanation for error 1: The error is minor because it does not lead to a loss of meaning, but it will be noticed as the article "an" is missing before "order".[SEP_WENDA]41	You are evaluating Chinese-to-English Machine translation task. The source is "好的，麻烦了". The model generated translation is "Okay, it is trouble.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Okay" instead of "Good"
+Explanation for error 2: Using "Okay" instead of "Good" changes the tone of the sentence and makes it less positive.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "it is trouble" instead of "it's a hassle"
+Explanation for error 2: Using "trouble" instead of "a hassle" changes the meaning of the sentence and makes it less accurate to the original source.[SEP_WENDA]42	You are evaluating Chinese-to-English Machine translation task. The source is "觉得很有意义的一本证书——急救证". The model generated translation is "A meaningful certificate – emergency certificate". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "急救证" translated as "emergency certificate"
+Explanation for error 1: The incorrect translation misses the content "急救证" which means "urgent care certificate" and translates it as "emergency certificate", causing a significant change in meaning.[SEP_WENDA]43	You are evaluating Chinese-to-English Machine translation task. The source is "这是我除了驾驶证之外一本觉得重要的技能证书之一！". The model generated translation is "This is one of the skills certificates I found important in addition to a driving license!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "important" in the incorrect translation
+Explanation for error 1: The incorrect translation omits the word "重要" (important) from the source sentence, which changes the meaning and weakens the emphasis on the skills certificate.[SEP_WENDA]44	You are evaluating Chinese-to-English Machine translation task. The source is "普及一下：急救措施其实是做发生突发事件时候的应急救援，即在救护车来之前的抢救。". The model generated translation is "Public: Emergency measures are actually emergency rescue when an emergency occurs, i.e. rescue before the ambulance arrives.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "Public" instead of "Popularize"
+Explanation for error 2: The word "Public" is used instead of the more accurate "Popularize," which is a minor stylistic error.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "rescue" instead of "rescue operations"
+Explanation for error 2: The incorrect translation uses the word "rescue" instead of "rescue operations," which is a minor error since it does not fully represent the source text.[SEP_WENDA]45	You are evaluating Chinese-to-English Machine translation task. The source is "众所周知，在事故发生后救护车来的过程中其实是还有一段时间的，而正是这段时间才是最关键的。". The model generated translation is "It is well known that there is still a period of time in the process of ambulances after the accident, and this is the most crucial time.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "there is still a period of time"
+Explanation for error 1: The incorrect translation changes the meaning by saying that there is still a period of time, instead of saying that there is a certain period of time. This major error confuses the reader and misleads them about the actual meaning of the sentence.[SEP_WENDA]46	You are evaluating Chinese-to-English Machine translation task. The source is "这个时候便是需要急救的时候。". The model generated translation is "This is the time when urgent assistance is needed.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Word choice
+Major/minor: Minor
+Error location 1: "urgent assistance" instead of "emergency assistance"
+Explanation for error 1: The incorrect translation uses "urgent assistance" instead of the more accurate "emergency assistance," but the meaning is still clear and the error is minor.[SEP_WENDA]47	You are evaluating Chinese-to-English Machine translation task. The source is "如果我真的发生了心脏病、脑溢血、呼吸骤停，那么我们生命的窗口只有四分钟，黄金四分钟！". The model generated translation is "If I really had a heart attack, cerebral hemorrhage, and a breathing stop, then the window of our lives was only four minutes, gold four minutes!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "gold four minutes"
+Explanation for error 2: The phrase "gold four minutes" is not as clear or idiomatic as "golden four minutes" in English.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "breathing stop"
+Explanation for error 2: The term "breathing stop" is not as accurate as "respiratory arrest" in representing the original Chinese term "呼吸骤停".[SEP_WENDA]48	You are evaluating Chinese-to-English Machine translation task. The source is "所以身边的人懂得急救是多么重要呀！". The model generated translation is "So people around you know how important emergency care is!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "So people around you"
+Explanation for error 1: The incorrect translation omits the "understand" part, which changes the meaning of the sentence. The correct translation should be "So those around you understand".[SEP_WENDA]49	You are evaluating Chinese-to-English Machine translation task. The source is "当我们身边有人倒下的时候，我们可以通过专业的知识去对他进行抢救，而不是傻傻地站在那里一动不动什么也做不了，这种无助的感觉太让人感到可怕了。". The model generated translation is "When someone falls around us, we can rescue him through professional knowledge, rather than standing there stupidly and not doing anything, this feeling of helplessness is too frightening.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "professional knowledge"
+Explanation for error 2: The source text only mentions "knowledge," not specifically "professional knowledge." This change in meaning adds information not present in the original text.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "feeling of helplessness"
+Explanation for error 2: The source text uses "可怕" which is more accurately translated as "terrifying" rather than "feeling of helplessness." This is a minor stylistic error that does not change the overall meaning but may be noticed by the reader.[SEP_WENDA]50	You are evaluating Chinese-to-English Machine translation task. The source is "“在中国，我们官方数据每年有三百万人意外死亡，最危险的叫心脏骤停。". The model generated translation is "“In China, our official data shows that three million people die accidentally every year, the most dangerous of which is heart failure.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "our official data" instead of "Chinese official data"
+Explanation for error 2: The translation should use "Chinese official data" to maintain the original source's style and make it clear that it is referring to data from China.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "heart failure" instead of "heart attack"
+Explanation for error 2: The translation should use "heart attack" as it is the more accurate translation of the Chinese term "心脏骤停" and is more commonly used in this context.[SEP_WENDA]51	You are evaluating Chinese-to-English Machine translation task. The source is "在美国全国是平均15%能救过来。". The model generated translation is "In the United States, an average of 15% can be saved.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "can be saved" instead of "can be rescued"
+Explanation for error 1: The incorrect translation changes the meaning of the original sentence by using "can be saved" instead of "can be rescued," which implies a different action.[SEP_WENDA]52	You are evaluating Chinese-to-English Machine translation task. The source is "在拉斯维加斯的赌场酒店，百分之七八十能救过来，上海、北京低于1%。”". The model generated translation is "In Las Vegas casino hotels, 78 percent can save, and in Shanghai, Beijing, less than 1 percent.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "78 percent can save"
+Explanation for error 2: The phrase "78 percent can save" is not a proper translation of "百分之七八十能救过来" and does not convey the intended meaning. The correct translation should be "88 percent of the rooms are available".
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "less than 1 percent"
+Explanation for error 2: The phrase "less than 1 percent" does not accurately convey the meaning of "上海、北京低于1%". The correct translation should be "rooms in Shanghai and Beijing are cheaper than 1%".[SEP_WENDA]53	You are evaluating Chinese-to-English Machine translation task. The source is "这是第一反应创始人陆乐说的。". The model generated translation is "This was the first reaction of the founder, Lu Lu Lu.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "This was" instead of "This is"
+Explanation for error 2: The use of "was" instead of "is" makes the sentence sound awkward and slightly changes the meaning.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "founder" instead of "founding member"
+Explanation for error 2: The incorrect translation uses "founder" instead of "founding member," which adds information not present in the source sentence.[SEP_WENDA]54	You are evaluating Chinese-to-English Machine translation task. The source is "如果一个人发生了心脏骤停，呼吸没有了，心跳没有了，你掐人中是没有任何作用的。". The model generated translation is "If a person has a cardiac arrest, breathing is no longer, heartbeat is no longer, you sting in the person has no effect.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "you sting"
+Explanation for error 4: The correct translation should be "you are useless" instead of "you sting".
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "no longer"
+Explanation for error 4: The correct translation should be "no longer present" instead of just "no longer".
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "heartbeat is no longer"
+Explanation for error 4: The correct translation should be "the person is no longer breathing" instead of "heartbeat is no longer".
+Error type 4: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 4: "you sting in the person has no effect"
+Explanation for error 4: The correct translation should be "you are useless in helping the person" instead of "you sting in the person has no effect".[SEP_WENDA]55	You are evaluating Chinese-to-English Machine translation task. The source is "必须做人工呼吸、胸外按压才有可能把人救过来。". The model generated translation is "It is necessary to do artificial breathing and pressure outside of the chest to be able to rescue the person.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Terminology is non-standard or does not fit context. Terminology is used inconsistently
+Major/minor: Major
+Error location 1: "pressure outside of the chest"
+Explanation for error 1: The correct term should be "chest compressions" instead of "pressure outside of the chest". This major error changes the meaning and may confuse the reader.[SEP_WENDA]56	You are evaluating Chinese-to-English Machine translation task. The source is "我发现我们现在还很少人会有这种意识去学习急救，但是当事情发生的时候就来不及了，所以还是呼吁大家都去学习一下这个技能，让我们在面对突发状况的时候能够及时作出反应。". The model generated translation is "I found that few of us now have this awareness to learn emergency aid, but it is not too late when things happen, so we call on everyone to learn this skill and let us react in time in the face of emergencies.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 1: "let us react"
+Explanation for error 1: The correct translation should be "allowing us to react" or "allowing us to make timely responses" to better convey the meaning of the original sentence.[SEP_WENDA]57	You are evaluating Chinese-to-English Machine translation task. The source is "说不定还能挽救一个人的生命！". The model generated translation is "It can save a person’s life!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains no error.[SEP_WENDA]58	You are evaluating Chinese-to-English Machine translation task. The source is "急救证可以在你们当地的红十字会培训中心报名，我是在珠海的红十字会培训中心报名的，学生还有优惠呢。". The model generated translation is "The emergency certificate can be enrolled at your local Red Cross Training Center, I am enrolled at the Red Cross Training Center in Zhejiang, and there are offers for students.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "I am enrolled at the Red Cross Training Center in Zhejiang"
+Explanation for error 2: The incorrect translation omits the information that the speaker is enrolled at the Red Cross Training Center in Zhejiang, China.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "there are offers for students"
+Explanation for error 2: The incorrect translation adds the information that there are offers for students, which is not present in the source sentence.[SEP_WENDA]59	You are evaluating Chinese-to-English Machine translation task. The source is "PS：最后一张图是记录自己25岁前要完成的目标的，把急救证加入目标清单也是几个月前的事情，但是确实是完成了呀！". The model generated translation is "PS: The last chart is recording the goals you want to accomplish before the age of 25, adding emergency certificates to the list of goals was also a few months ago, but it is indeed done!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "last chart" instead of "last picture"
+Explanation for error 2: The use of "chart" instead of "picture" is not incorrect, but it is less natural and less consistent with the rest of the translation.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "done" instead of "achieved"
+Explanation for error 2: Although "done" is not incorrect, "achieved" is a more accurate representation of the source and better conveys the sense of success and fulfillment.[SEP_WENDA]60	You are evaluating Chinese-to-English Machine translation task. The source is "接着要去考其他想考的证书了，打算去考个潜水证，之前在小红书看到还有个潜水急救证，考这个证好像还得有急救证才可以去考，所以其实急救证还是很有用的！". The model generated translation is "Then go to examine the other certificate that you want to examine, intend to examine a diving certificate, before seeing a diving emergency certificate in the Red Book, this certificate seems to have an emergency emergency certificate to be examined, so the emergency emergency certificate is still useful!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "intend to examine a diving certificate"
+Explanation for error 4: The incorrect translation uses "intend" instead of "plan" which changes the meaning from a definite action to a vague intention.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "diving emergency certificate"
+Explanation for error 4: The incorrect translation omits the word "急救" which means "emergency" from the source text, leading to confusion about the type of certificate being discussed.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "Red Book"
+Explanation for error 4: The incorrect translation uses "Red Book" instead of "little green book," which is not present in the source text and changes the meaning of the sentence.
+Error type 4: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 4: "so the emergency emergency certificate is still useful!"
+Explanation for error 4: The incorrect translation has a grammatical error in the phrase "emergency emergency certificate," which should be "emergency rescue certificate."[SEP_WENDA]61	You are evaluating Chinese-to-English Machine translation task. The source is "我 order 了 ＃#NUMBER#". The model generated translation is "I ordered ##NUMBER#". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect punctuation
+Major/minor: Minor
+Error location 1: The space before the hash symbol
+Explanation for error 1: The space before the hash symbol is unnecessary and should not be included in the translation.[SEP_WENDA]62	You are evaluating Chinese-to-English Machine translation task. The source is "其中 13 元的虾饺就一个！？". The model generated translation is "One of the $13 crumbs?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "crumbs" instead of "crabmeat"
+Explanation for error 2: The incorrect translation uses "crumbs" instead of "crabmeat," which significantly changes the meaning of the sentence and confuses the reader.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "One of the $13" instead of "Only $13"
+Explanation for error 2: The incorrect translation adds the word "one" and changes the meaning slightly, but it does not lead to a loss of meaning or mislead the reader.[SEP_WENDA]63	You are evaluating Chinese-to-English Machine translation task. The source is "没试过". The model generated translation is "have not tried.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Minor
+Error location 1: "have not tried"
+Explanation for error 1: The correct translation should be "I have not tried" with the subject "I" included. The omission of "I" is a minor grammatical error but does not change the meaning of the sentence.[SEP_WENDA]64	You are evaluating Chinese-to-English Machine translation task. The source is "怎么 #NAME# 不写明白？". The model generated translation is "Why is #NAME# not written?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "not written" instead of "not clear"
+Explanation for error 1: The incorrect translation changes the meaning of the sentence by stating that the reason for the confusion is that the goal is not written, rather than being unclear.[SEP_WENDA]65	You are evaluating Chinese-to-English Machine translation task. The source is "一个要 13 元？". The model generated translation is "One for $13?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "One for $13?"
+Explanation for error 1: The incorrect translation omits the "?" mark, which indicates a question in the source sentence.[SEP_WENDA]66	You are evaluating Chinese-to-English Machine translation task. The source is "昨天 #PRS_ORG# 漏送餐品，这次就一个虾饺给我吃！？". The model generated translation is "Yesterday #PRS_ORG# Leaked meals, this time for a strawberries to eat me?!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 3: "strawberries"
+Explanation for error 3: The incorrect translation introduces the specific fruit "strawberries" which is not mentioned in the source text.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 3: "Leaked meals"
+Explanation for error 3: The incorrect translation uses "Leaked meals" instead of "leaked food" which changes the meaning and does not accurately represent the source text.
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 3: "for a strawberries to eat me?"
+Explanation for error 3: The incorrect translation has a stylistic problem with the phrase "for a strawberries to eat me?!". The correct phrasing should be "to me" instead of "to eat me?!".[SEP_WENDA]67	You are evaluating Chinese-to-English Machine translation task. The source is "因为明明我之前输入 code 时看到是有效的". The model generated translation is "Because I found the code to be effective.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "I found" instead of "I saw"
+Explanation for error 1: The incorrect translation changes the meaning of the sentence by using "found" instead of "saw," which implies discovering the code rather than seeing its effectiveness.[SEP_WENDA]68	You are evaluating Chinese-to-English Machine translation task. The source is "先说结论，我个人认为《四海》是一部全方位的烂片，从各种意义上来说都是。". The model generated translation is "To conclude, I personally think the Four Seas is a full-length shit, in all respects.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "the Four Seas"
+Explanation for error 2: The incorrect translation uses "the Four Seas" instead of "the Four Worlds," which changes the meaning of the title and may confuse readers.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "full-length shit"
+Explanation for error 2: The incorrect translation uses "full-length shit" instead of "full-length movie," which is not only inappropriate but also may confuse readers.[SEP_WENDA]69	You are evaluating Chinese-to-English Machine translation task. The source is "但你要说这部电影是不是一个亮点也没有，那倒也不是至少配乐选的挺好。". The model generated translation is "But if you say that this film is not a highlight, it is not at least a good choice.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "it is not at least"
+Explanation for error 1: The incorrect translation changes the meaning of the sentence by suggesting that the film is a highlight and a good choice, which is the opposite of the original meaning.[SEP_WENDA]70	You are evaluating Chinese-to-English Machine translation task. The source is "烂片分很多种，让你能在电影院里酣然入睡的算一种，让你看完后义愤填膺的也算一种，《四海》对观众来说就像是峨眉山上的猴子，它能用无数种方式来点燃你的怒火。". The model generated translation is "A lot of kinds of shit, you can fall asleep in the movie theater is one, you can see the aftermath of anger is also one, the Four Seas for the audience is like a monkey on the ears, it can in countless ways to light up your anger.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "A lot of kinds of shit"
+Explanation for error 4: The phrase "A lot of kinds of shit" is not only stylistically inappropriate but also changes the meaning of the original sentence. The correct translation should be "There are many kinds of crap."
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "you can fall asleep in the movie theater is one"
+Explanation for error 4: The incorrect translation is missing the word "very" from the original sentence, which changes the meaning. The correct translation should be "You can fall asleep very easily in the movie theater."
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "the Four Seas for the audience is like a monkey on the ears"
+Explanation for error 4: The phrase "the Four Seas for the audience is like a monkey on the ears" is not only stylistically inappropriate but also changes the meaning of the original sentence. The correct translation should be "Four Swords for the players is like a monkey on the controller."
+Error type 4: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "it can in countless ways to light up your anger"
+Explanation for error 4: The phrase "it can in countless ways to light up your anger" is not only stylistically inappropriate but also changes the meaning of the original sentence. The correct translation should be "it can use numerous methods to extinguish your anger."[SEP_WENDA]71	You are evaluating Chinese-to-English Machine translation task. The source is "在侮辱观众这点上，韩寒真的是天赋绝伦。". The model generated translation is "In this point of insulting the audience, Korean is truly talented.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "Insulting the audience"
+Explanation for error 2: The incorrect translation misses the meaning of "观众" (audience) and changes the meaning of the sentence to "insulting."
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "truly talented"
+Explanation for error 2: The incorrect translation adds the adjective "talented" which is not present in the source sentence, changing the meaning of the sentence.[SEP_WENDA]72	You are evaluating Chinese-to-English Machine translation task. The source is "这部片子最让人感到痛苦的就是它仿佛是克系小说里的造物，难以名状，漏洞多的就像是小马哥身上的风衣。". The model generated translation is "The most painful thing about this film is that it seems to be a creature in the novel, difficult to name, and there are many flaws like the shirt on the body of the little Mago.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "difficult to name"
+Explanation for error 2: The correct translation should be "difficult to identify" instead of "difficult to name," which changes the meaning and makes the sentence less clear.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "shirt"
+Explanation for error 2: The correct translation should be "clothes" instead of "shirt," which is a more accurate and less specific description of the item on the little Mago's body.[SEP_WENDA]73	You are evaluating Chinese-to-English Machine translation task. The source is "甚至看完后你会怀疑这里面是否有导演暗含的隐喻，但当你仔细思考之后发现它其实就是一坨屎。". The model generated translation is "Even after viewing it, you’ll doubt if there’s a metaphor of the director’s implication, but when you think about it carefully, you find it’s actually shit.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "shit"
+Explanation for error 4: The use of the word "shit" instead of "a load of bullshit" changes the tone and meaning of the sentence, making it inappropriate and potentially offensive.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "Even after viewing it"
+Explanation for error 4: The incorrect translation adds "after viewing it" which is not present in the source sentence, changing the meaning slightly.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "you’ll doubt"
+Explanation for error 4: The incorrect translation adds "you'll doubt" which is not present in the source sentence, adding uncertainty to the meaning.
+Error type 4: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 4: "it's"
+Explanation for error 4: The incorrect translation uses "it's" instead of "it is" which is a minor error in grammar and style.[SEP_WENDA]74	You are evaluating Chinese-to-English Machine translation task. The source is "先简单的说下我很难理解的一些情节。". The model generated translation is "First, let me explain a few things that I find difficult to understand.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains no error.[SEP_WENDA]75	You are evaluating Chinese-to-English Machine translation task. The source is "男主居住地应该是偏南方的某个小岛上，和他的奶奶相依为命。". The model generated translation is "The man's home should be on a small island in the south, with his grandmother.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "with his grandmother"
+Explanation for error 2: The incorrect translation introduces the grandmother, which is not mentioned in the source sentence.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "偏南方的某个小岛上" translated as "a small island in the south"
+Explanation for error 2: The incorrect translation omits the phrase "some island in the southwest" from the source sentence, which changes the meaning.[SEP_WENDA]76	You are evaluating Chinese-to-English Machine translation task. The source is "她奶奶有个愿望是想看下雪，然后剧情就安排邻里中的一个大爷开着小面包车送她去东北看雪。". The model generated translation is "Her grandmother had a desire to see the snow, and then the story arranged a gentleman in the neighborhood to drive her to the northeast to see the snow.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "a gentleman in the neighborhood"
+Explanation for error 2: The incorrect translation introduces a new character, a gentleman, which is not present in the source text.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "drive her to the northeast"
+Explanation for error 2: The incorrect translation changes the destination from "the north" to "the northeast," which is not an accurate representation of the source text.[SEP_WENDA]77	You are evaluating Chinese-to-English Machine translation task. The source is "高龄老人坐着面包车从南方到东北看雪？？". The model generated translation is "Old man sitting in the car from the south to the northeast to see the snow?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "Old man sitting"
+Explanation for error 2: The incorrect translation omits the verb "sit" which is essential to the meaning of the sentence.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "to see the snow"
+Explanation for error 2: The incorrect translation omits the original purpose of the trip, which is to go skiing.[SEP_WENDA]78	You are evaluating Chinese-to-English Machine translation task. The source is "他和他爹对此还非常放心。". The model generated translation is "He and his father are very reassured.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "reassured"
+Explanation for error 1: The incorrect translation uses the past tense "reassured" instead of the present tense "reassuring," which changes the meaning of the sentence.[SEP_WENDA]79	You are evaluating Chinese-to-English Machine translation task. The source is "然后这位老人就没下文了。". The model generated translation is "The old man is not below.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "is not below"
+Explanation for error 1: The incorrect translation changes the meaning of the sentence by using "is not below" instead of "left without a word." The correct translation should be "left without a word."[SEP_WENDA]80	You are evaluating Chinese-to-English Machine translation task. The source is "在废弃轮船上开酒店，女主他哥怎么拿到营业执照的？". The model generated translation is "Opening a hotel on an abandoned boat, how did the owner get a business license?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "how did the owner get a business license?"
+Explanation for error 2: The incorrect translation changes the focus from the female owner obtaining a business license to the owner obtaining a business license, which is a significant change in meaning.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "Opening a hotel"
+Explanation for error 2: The incorrect translation adds the word "hotel" when the source text only mentions "opening a bar." Although it doesn't lead to a loss of meaning, it does add information that was not present in the original text.[SEP_WENDA]81	You are evaluating Chinese-to-English Machine translation task. The source is "岛上飞车党小混混为什么能轻轻松松就把一段山路做到封路？？". The model generated translation is "Why can the island's flying car party small mess easily block a mountain road?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 3: "small mess"
+Explanation for error 3: The term "small mess" is not a proper translation of "混混" which should be "disorganized" or "chaotic". This changes the meaning of the sentence.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 3: "easily"
+Explanation for error 3: The word "easily" is missing the word "just" from the correct translation, which changes the meaning of the sentence.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 3: "block"
+Explanation for error 3: The word "block" is not present in the source sentence and should be "close" in the correct translation. This is a minor error because it does not change the overall meaning of the sentence but will be noticed.[SEP_WENDA]82	You are evaluating Chinese-to-English Machine translation task. The source is "然后路中间送钢筋的卡车就停在路边，四周连卡车司机都找不到。". The model generated translation is "Then the truck that sent the steel pipe in the middle of the road stopped on the side of the road, not even the truck driver could be found.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "not even the truck driver could be found"
+Explanation for error 1: The incorrect translation adds an unnecessary "even" which changes the meaning of the sentence, implying that the truck driver was also unable to be found.[SEP_WENDA]83	You are evaluating Chinese-to-English Machine translation task. The source is "这道具感也太明显了吧。". The model generated translation is "This feeling is too obvious.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Word choice
+Major/minor: Major
+Error location 1: "feeling" instead of "emotion"
+Explanation for error 1: Using "feeling" instead of "emotion" changes the meaning of the sentence, making it less clear and less accurate.[SEP_WENDA]84	You are evaluating Chinese-to-English Machine translation task. The source is "一个征信不行的且有违法嫌疑的小混混飞车党为什么会成为一名辅警？". The model generated translation is "Why would a small blunder car party suspected of violating the law become an auxiliary policeman?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "small blunder car party"
+Explanation for error 2: The phrase "small blunder car party" is an incorrect and confusing translation of "一个征信不行的且有违法嫌疑的小混混飞车党". The correct translation should be "a gang of suspects with a criminal record".
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "suspected of violating the law"
+Explanation for error 2: The phrase "suspected of violating the law" does not accurately represent the source text "有违法嫌疑". The correct translation should be "with criminal suspicions".[SEP_WENDA]85	You are evaluating Chinese-to-English Machine translation task. The source is "面对高利贷为啥不报警，电影里警察还特地问了是否有难处？". The model generated translation is "In the face of Goliath loan, why not call the police, the police in the movie also asked specifically whether there were difficulties?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Goliath loan" instead of "high-interest loans"
+Explanation for error 2: The term "Goliath loan" is not a standard term in English and may confuse readers. The correct term should be "high-interest loans."
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "specifically" instead of "especially"
+Explanation for error 2: The word "specifically" is not present in the source text and slightly changes the meaning of the sentence. The correct translation should be "especially."[SEP_WENDA]86	You are evaluating Chinese-to-English Machine translation task. The source is "一个成年人懂得用智能手机，却不知道在旅馆如何用房卡开门，然后强行安排找不到旅馆老板，坐在房间门外睡一宿？". The model generated translation is "An adult who knows how to use a smartphone, but does not know how to open the door in a hotel with a room card, then forcefully arrange not to find the hotel owner, sitting outside the room door to sleep?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "then forcefully arrange not to find"
+Explanation for error 2: The phrase "then forcefully arrange not to find" is grammatically incorrect and should be "then forcefully arranges to find."
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "sitting outside the room door to sleep?"
+Explanation for error 2: The phrase "sitting outside the room door to sleep?" is unclear and should be "sleeping outside the hotel room door."[SEP_WENDA]87	You are evaluating Chinese-to-English Machine translation task. The source is "这种莫名其妙的情节充斥在整个影片里，由于情节过于离谱以至于我回忆它们时都会令我感到痛苦。". The model generated translation is "This bizarre plot is filled with the whole film, and it’s so unspectical that it hurts me when I recall them.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 2: "unspectical"
+Explanation for error 2: The correct word should be "spectacular," but the error in spelling changes the meaning to "unspectical," which is not a real word.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "so unspectical"
+Explanation for error 2: The original meaning of "离谱以至于" is "too far-fetched," but the incorrect translation changes the meaning to "unspectical," which is not a real word and does not convey the original meaning.[SEP_WENDA]88	You are evaluating Chinese-to-English Machine translation task. The source is "除了情节外，更糟糕的是电影的主旨，或者说这电影根本没有主旨，就是一个面目可憎的缝合怪。". The model generated translation is "In addition to the plot, what is worse is the main purpose of the film, or that the film has no subject at all, is a look disgusting seamless.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "what is worse"
+Explanation for error 4: The source text says "更糟糕," which means "even more confusing," but the incorrect translation says "what is worse," which changes the meaning.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "or that the film has no subject"
+Explanation for error 4: The source text says "或者说这电影根本没有主旨," which means "or that the film has no basic plot," but the incorrect translation says "that the film has no subject," which is missing the idea of "basic plot."
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "look disgusting seamless"
+Explanation for error 4: The source text says "面目可憎的缝合怪," which means "face-painting nightmare," but the incorrect translation says "look disgusting seamless," which is not a proper phrase and does not convey the same meaning.
+Error type 4: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 4: "In addition to the plot"
+Explanation for error 4: The correct translation should be "Besides the plot," but the incorrect translation uses "In addition to the plot," which is not necessarily wrong but is a minor deviation from the source text.[SEP_WENDA]89	You are evaluating Chinese-to-English Machine translation task. The source is "影片开头你会以为他想拍个喜剧片，20多分钟后你猜它也许是个励志片，看一半时你觉得它可能是个想体现小镇青年生存不易的剧情片，看完后你就压根也不知道自己究竟看了个啥，随之而来的是对自己深深的怀疑，大过年的为什么要跑到电影院去欣赏大便。". The model generated translation is "At the beginning of the film you will think he wants to shoot a comedy, more than 20 minutes later you guess it may be an incentive film, half of the time you think it may be a drama that wants to reflect the survival of small town youth, after watching you do not know exactly what you watched, followed by deep doubts about yourself, why over the years to run to the cinema to admire sputum.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "comedy" instead of "drama"
+Explanation for error 4: The translation incorrectly states that the filmmaker wants to shoot a comedy, while the source text says it's a drama.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "over the years" instead of "his age"
+Explanation for error 4: The translation adds information about the age of the person, which is not present in the source text.
+Error type 3: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "incentive" instead of "inspirational"
+Explanation for error 4: The translation uses the wrong term "incentive" instead of the correct term "inspirational."
+Error type 4: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 4: "sputum" instead of "praise"
+Explanation for error 4: The translation uses the wrong word "sputum" instead of the correct word "praise."[SEP_WENDA]90	You are evaluating Chinese-to-English Machine translation task. The source is "对于大部分人来说其实也都非常熟悉各类电影的套路了，比如你要想拍摩托车手，那就励志＋喜剧然后告诉观众一个有天赋的菜鸟是如何一步步走向成功的。". The model generated translation is "For most people, they are actually very familiar with all kinds of movies, such as if you want to shoot a motorcycle driver, then encourage + comedy and tell the audience how a talented cookbird is step by step towards success.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 4: "encourage + comedy"
+Explanation for error 4: The incorrect translation has a grammatical error in the use of a hyphen, which should be "encouragement" instead of "encourage". Additionally, "comedy" should be "comedies" to match the plural form in the source sentence.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "motorcycle driver"
+Explanation for error 4: The incorrect translation has changed "motorcyclist" to "motorcycle driver", which omits the specific reference to a motorcyclist in the source sentence.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "cookbird"
+Explanation for error 4: The incorrect translation has added the word "cookbird" which is not present in the source sentence. The correct translation should be "crane".
+Error type 4: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 4: "step by step"
+Explanation for error 4: The incorrect translation has changed "step by step" to "step by step" without capitalization, which is a minor error in the English text.[SEP_WENDA]91	You are evaluating Chinese-to-English Machine translation task. The source is "如果你想拍爱情片，那你就老老实实讲喜欢骑摩托的小镇青年和服务员妹子之间的恩怨纠葛。". The model generated translation is "If you want to make a love film, then you can honestly talk about the conflict between the youth of a small town who loves motorcycling and the maid of the waiter.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 3: "make a love film" instead of "shoot a love story"
+Explanation for error 3: The incorrect translation uses "make a love film" which is not the same as "shoot a love story" and changes the meaning.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 3: "maid of the waiter" instead of "servant girls"
+Explanation for error 3: The incorrect translation adds information not present in the source by specifying that the maid is from the waiter's family, which is not mentioned in the original text.
+Error type 3: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 3: "honestly talk" instead of "sincerely discuss"
+Explanation for error 3: The incorrect translation uses "honestly talk" which is not the same as "sincerely discuss" and changes the meaning.[SEP_WENDA]92	You are evaluating Chinese-to-English Machine translation task. The source is "如果你想反映现实，那最起码你的情节不能出现和正常世界相悖的东西。". The model generated translation is "If you want to reflect reality, then at least your plot can’t show up something contrary to the normal world.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "then at least"
+Explanation for error 2: The use of "then at least" is less fluent and less natural than "then your story" in this context.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "contrary to"
+Explanation for error 2: The use of "contrary to" is less accurate than "normal world" in representing the source text's meaning.[SEP_WENDA]93	You are evaluating Chinese-to-English Machine translation task. The source is "（比如尹正演的那个新摩托刚被烧了，然后还能唱歌的角色），就不能去开一些连肯尼迪看了都遭不住的脑洞。". The model generated translation is "(For example, the new motorcycle Yin was just burned, and then can still sing the role), you can't go open some brains that even Kennedy could not endure.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "For example" instead of "For instance"
+Explanation for error 4: "For example" is less natural and less accurate in this context.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "new motorcycle" instead of "new model"
+Explanation for error 4: The incorrect translation misses the information that it is a new model, not just a new motorcycle.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "can still sing" instead of "can sing"
+Explanation for error 4: The incorrect translation adds the information that the character can still sing, which is not present in the source text.
+Error type 4: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 4: "you can't go open" instead of "you cannot open"
+Explanation for error 4: The incorrect translation has a grammatical error in the phrase "you can't go open," which should be "you cannot open."[SEP_WENDA]94	You are evaluating Chinese-to-English Machine translation task. The source is "至于女主明明不是弱智可在某些方面表现的就像个5岁小孩，我真不知道这是演技的原因还是导演的要求。". The model generated translation is "As for whether the actress is obviously not a weak mind that can act in some ways like a five-year-old child, I really don’t know whether this is the reason for acting or the director’s requirement.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "obviously" instead of "clearly"
+Explanation for error 2: The use of "obviously" instead of "clearly" changes the tone of the sentence and makes it sound more aggressive.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "like" instead of "resembling"
+Explanation for error 2: Using "like" instead of "resembling" makes the sentence less precise and could be misinterpreted.[SEP_WENDA]95	You are evaluating Chinese-to-English Machine translation task. The source is "还有一点我也挺想不明白，韩寒作为一个赛车手为什么这么热衷于在他自己的电影里添加撞车情节？". The model generated translation is "Another thing I also really wonder why Korean as a racing driver is so keen to add a crash story in his own movie?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "Another thing" instead of "There's also something I don't understand"
+Explanation for error 2: The phrase "Another thing" is less natural and less accurate to the original Chinese phrase "还有一点".
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "Korean" instead of "Korean drivers"
+Explanation for error 2: The incorrect translation does not include the possessive form "drivers" from the original Chinese phrase "韩寒".[SEP_WENDA]96	You are evaluating Chinese-to-English Machine translation task. The source is "这样的电影安排在春节档里，难道是为了给观众添堵吗？". The model generated translation is "Is this kind of film arranged in the Spring Festival archives to get the audience stuck?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "to get the audience stuck?"
+Explanation for error 2: The incorrect translation uses an awkward and unclear phrasing that may confuse or mislead the reader. The correct translation should be "to give the audience a taste of their own medicine."
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "film arranged" instead of "movie arrangements"
+Explanation for error 2: The incorrect translation uses "film arranged" instead of the more accurate "movie arrangements" from the source text. This minor error does not lead to a loss of meaning but will be noticed.[SEP_WENDA]97	You are evaluating Chinese-to-English Machine translation task. The source is "应用:台达值编码器用电池盒". The model generated translation is "Application: Battery box for TID value encoders". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "for TID value encoders"
+Explanation for error 2: The incorrect translation omits the "used" in the phrase "used battery packs," which changes the meaning of the sentence.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "Application"
+Explanation for error 2: The incorrect translation uses "Application" instead of "Applications," which is a minor stylistic error that does not change the meaning of the sentence but may be noticed by the reader.[SEP_WENDA]98	You are evaluating Chinese-to-English Machine translation task. The source is "产地：中国深圳". The model generated translation is "Location: Shenzhen China". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "China" is missing in the incorrect translation
+Explanation for error 1: The incorrect translation omits the word "China" from the location, making it slightly less specific but not changing the overall meaning.[SEP_WENDA]99	You are evaluating Chinese-to-English Machine translation task. The source is "电池盒尺寸如下：". The model generated translation is "The battery size is as follows:". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains no error.[SEP_WENDA]100	You are evaluating Chinese-to-English Machine translation task. The source is "A2系列相关宝贝如下：". The model generated translation is "The A2 series is as follows:". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains no error.[SEP_WENDA]101	You are evaluating Chinese-to-English Machine translation task. The source is "CN1连接器 CN1信号I/O连接线 CN1口用端子台 刹车电阻". The model generated translation is "CN1 connector CN1 signal I/O connection line CN1 terminal brake resistance". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "terminal brake resistance"
+Explanation for error 2: The incorrect translation omits the "breaker" part of the term "breaker resistance" and replaces it with "brake resistance," which changes the meaning of the sentence.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "connection line" instead of "lines"
+Explanation for error 2: The incorrect translation uses the singular form "connection line" instead of the plural form "lines," which is a minor stylistic error but does not change the overall meaning of the sentence.[SEP_WENDA]102	You are evaluating Chinese-to-English Machine translation task. The source is "小功率编码器电缆 中大功率编码器电缆 小功率动力线 中大功率动力线". The model generated translation is "Small Power Encoder Cable Large Power Encoder Cable Large Power Encoder Cable Large Power Cable Large Power Cable Large Power Cable Large Power Cable Large Power Cable". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 3: "Small Power Encoder Cable Large Power Encoder Cable"
+Explanation for error 3: The incorrect translation has reversed the order of the power encoders, which changes the meaning of the sentence.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 3: "Large Power Encoder Cable"
+Explanation for error 3: The incorrect translation is missing the word "motor" from the source, which makes the sentence unclear.
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 3: "Large Power Cable"
+Explanation for error 3: The incorrect translation has changed "motor" to "cable", which is not present in the source and misleads the reader.[SEP_WENDA]103	You are evaluating Chinese-to-English Machine translation task. The source is "小功率动力线带刹车 中大功率动力线带刹车 编码器及动力插头 伺服电池盒". The model generated translation is "Small-powered power line with brakes Large-powered power line with brakes Encoder and power plug Servo battery box". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "Small-powered power line with brakes"
+Explanation for error 4: The correct translation should be "Micro-powered motor line with brakes" instead of "Small-powered power line with brakes".
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "Large-powered power line with brakes"
+Explanation for error 4: The correct translation should be "Major-powered motor line with brakes" instead of "Large-powered power line with brakes".
+Error type 3: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "Encoder and power plug"
+Explanation for error 4: The correct translation should be "Encoder and power socket" instead of "Encoder and power plug".
+Error type 4: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "Servo battery box"
+Explanation for error 4: The correct translation should be "Servo battery pack" instead of "Servo battery box".[SEP_WENDA]104	You are evaluating Chinese-to-English Machine translation task. The source is "1.本店合作快递公司，". The model generated translation is "The company cooperates with the express company,". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "本店合作快递公司" translated to "the company"
+Explanation for error 1: The translation omits the word "本店" which means "local" or "local delivery company". The correct translation should be "The local delivery company" instead of "the express company".[SEP_WENDA]105	You are evaluating Chinese-to-English Machine translation task. The source is "1）合作快递以旺旺签名为准！". The model generated translation is "1) The cooperation express is subject to a strong signature!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "The cooperation express"
+Explanation for error 2: The term "cooperation express" is not a commonly used or understood term in English, and it may confuse readers. The correct term should be "collaborative delivery."
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "strong signature"
+Explanation for error 2: The source text mentions "旺旺签名" which means "well-known signature," but the incorrect translation uses "strong signature," which changes the meaning and does not accurately represent the source.[SEP_WENDA]106	You are evaluating Chinese-to-English Machine translation task. The source is "2）顺丰快递". The model generated translation is "2) Good delivery". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "顺丰快递" translated as "Good delivery"
+Explanation for error 1: The incorrect translation omits the important aspect of "speed" in the delivery process, which is an essential part of the source sentence.[SEP_WENDA]107	You are evaluating Chinese-to-English Machine translation task. The source is "2.买家急需产品或有时效限制，建议选择顺风快递，建议到付，顺丰相对有所保证，修改运费后再付款。". The model generated translation is "The buyer has an urgent need for products or time-effective restrictions, it is recommended to choose a suitable express delivery, it is recommended to pay, the suitable goods are relatively guaranteed, and the shipping fee is changed after payment.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 3: "The buyer has an urgent need for products"
+Explanation for error 3: The incorrect translation uses "buyer" instead of "seller," which changes the meaning of the sentence.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 3: "time-effective restrictions"
+Explanation for error 3: The incorrect translation uses "time-effective restrictions" instead of "time-sensitive requirements," which omits the idea of "sensitive" in the meaning of the source sentence.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 3: "changed"
+Explanation for error 3: The incorrect translation uses "changed" instead of "modified," which is not present in the source sentence but does not significantly change the meaning.[SEP_WENDA]108	You are evaluating Chinese-to-English Machine translation task. The source is "3.买家对本店的运费收取有疑问，可选运费到付。". The model generated translation is "The buyer has doubts about the store's shipping fee, the shipping fee can be paid.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "shipping fee" instead of "freight collection"
+Explanation for error 2: The incorrect translation misses the content of "freight collection" from the source and only mentions "shipping fee," which is not the same concept.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "the shipping fee can be paid" instead of "the freight collection can be paid"
+Explanation for error 2: The incorrect translation uses "can be paid" instead of "can be deducted," which is a minor stylistic problem that does not change the meaning but is noticeable.[SEP_WENDA]109	You are evaluating Chinese-to-English Machine translation task. The source is "4.重物产品一般发物流，另行联系。". The model generated translation is "Heavy goods generally ship, separate contact.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "separate contact"
+Explanation for error 2: The phrase "separate contact" is grammatically incorrect and should be "connect to."
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Heavy goods generally ship"
+Explanation for error 2: The phrase "Heavy goods generally ship" is not a proper translation of "重物产品一般发物流" and is stylistically awkward. It should be "Heavy goods usually undergo logistics."[SEP_WENDA]110	You are evaluating Chinese-to-English Machine translation task. The source is "1.本店支持7天退换货服务，由于产品质量及发错数量问题，本店承担运费。". The model generated translation is "The store supports 7 days of return goods service, due to the quality of the product and the number of errors, the store will bear the shipping fee.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "due to the quality of the product and the number of errors"
+Explanation for error 1: The incorrect translation omits the mention of "problems with" in the phrase "problems with the product quality and the number of errors."[SEP_WENDA]111	You are evaluating Chinese-to-English Machine translation task. The source is "2.非产品本身质量问题，由于买家选错型号及其他因素需要退换货，在不影响产品本身功能没有问题及不影响二次销售的，本店支持除运费外的免费退换货服务，来回运费运费需要买件承担。". The model generated translation is "2. non-product quality problems, because the buyer selected the wrong model and other factors need to replace the goods, without affecting the function of the product itself, there are no problems and does not affect the secondary sales, the store supports free replacements service in addition to shipping charges, return shipping charges must be borne.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "non-product quality problems"
+Explanation for error 2: The correct translation should be "product quality issues" to maintain the original meaning.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "shipping charges"
+Explanation for error 2: The original text does not mention shipping charges, only return shipping charges.[SEP_WENDA]112	You are evaluating Chinese-to-English Machine translation task. The source is "3.本店不支持以快递延误而造成需要退货，且需要卖家承担运费诉求。". The model generated translation is "The store does not support the need to return the goods due to the delay in express delivery, and the seller must bear the shipping fee claims.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "due to the delay in express delivery"
+Explanation for error 2: The incorrect translation omits the phrase "caused by" (以快递延误), which changes the meaning of the sentence.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "shipping fee claims"
+Explanation for error 2: The correct translation uses the term "shipping costs" (运费诉求), while the incorrect translation uses "shipping fee claims," which is not a standard term in English.[SEP_WENDA]113	You are evaluating Chinese-to-English Machine translation task. The source is "4.定制产品非质量问题不予退换货。". The model generated translation is "Non-quality problems of customized products are not returned.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "are not returned" instead of "cannot be exchanged"
+Explanation for error 1: The incorrect translation omits the information that non-quality problems cannot be exchanged for other products, but it does not change the overall meaning of the sentence.[SEP_WENDA]114	You are evaluating Chinese-to-English Machine translation task. The source is "1.本品是原装正品？". The model generated translation is "Is this product original?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "original" instead of "unused"
+Explanation for error 1: The incorrect translation omits the information that the product is "unused," which changes the meaning of the sentence.[SEP_WENDA]115	You are evaluating Chinese-to-English Machine translation task. The source is "答：未注明原厂品牌的一律国产替代产品。". The model generated translation is "A: There is no indication of the original brand of all domestic replacement products.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "all" in the incorrect translation
+Explanation for error 2: The incorrect translation adds the word "all," which changes the meaning of the sentence by suggesting that every replacement product has no indication of the original brand.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "A:" at the beginning of the sentence
+Explanation for error 2: The use of "A:" at the beginning of the sentence is a stylistic error, as it is not necessary to use a letter instead of "yes" or "no."[SEP_WENDA]116	You are evaluating Chinese-to-English Machine translation task. The source is "2.本店有仿品吗？". The model generated translation is "Does the store have similar products?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "similar products" instead of "duplicates"
+Explanation for error 1: The incorrect translation misses the specific mention of "duplicates" from the source sentence and replaces it with a more general term "similar products", which does not change the overall meaning but is still a deviation from the original text.[SEP_WENDA]117	You are evaluating Chinese-to-English Machine translation task. The source is "答：很抱歉，本店不出售高仿产品，所谓高仿产品，具有原厂的LOGO与包装。". The model generated translation is "A: Sorry, our store does not sell high quality products, so-called high quality products, with the original factory logo and packaging.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "our store" instead of "the store"
+Explanation for error 1: The incorrect translation changes the meaning by making it seem like the store being referred to is the store of the person asking the question, rather than the general store being discussed in the source sentence.[SEP_WENDA]118	You are evaluating Chinese-to-English Machine translation task. The source is "3.国产xxx，是原厂在中国生产的吗？". The model generated translation is "Is the original product produced in China?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "the original product" instead of "original Chinese-to-English Machine translation task"
+Explanation for error 1: The incorrect translation changes the meaning by not specifying that the original Chinese-to-English Machine translation task is about Chinese-to-English Machine translation task.[SEP_WENDA]119	You are evaluating Chinese-to-English Machine translation task. The source is "答：国产的是替代产品，非原厂在中国生产的产品，只是国内都沿用该说法。". The model generated translation is "A: The domestic product is the alternative product, the non-original factory products produced in China, only the domestic use of this claim.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 3: "The domestic product"
+Explanation for error 3: The correct translation should be "domestically produced products" instead of "the domestic product," which changes the meaning.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 3: "non-original factory"
+Explanation for error 3: The correct translation should be "non-original factories" instead of "non-original factory," which omits the plural form and changes the meaning.
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 3: "only the domestic use of this claim"
+Explanation for error 3: The correct translation should be "simply used within China" instead of "only the domestic use of this claim," which is awkward phrasing.[SEP_WENDA]120	You are evaluating Chinese-to-English Machine translation task. The source is "专业提供三菱，安川，台达，松下，欧姆龙，西门子等国产伺服、PLC的连接电缆、接头等周边配件，主要包括伺服编码器、电源电缆、控制接头、电源航空插头、端子台及电缆、锂电池、PLC程序下载线、连接线等，刹车电阻 ，现场总线，电线电缆，所有配件均严格按照三菱标准，专业工程师定做。". The model generated translation is "Specialized in providing domestic servo, PLC connection cable, connector and other surrounding accessories, mainly including servo encoder, power cable, control connector, power air connector, terminal and cable, lithium battery, PLC program download line, connection line, brake resistance, field bus line, power cable, all accessories are strictly in accordance with Mitsubishi standards, professional engineers.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 3: "power cable" instead of "power cables"
+Explanation for error 3: The incorrect translation misses the plural form of "power cables" from the source, which changes the meaning of the sentence.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 3: "lithium battery" instead of "batteries"
+Explanation for error 3: The incorrect translation adds the word "lithium" which is not present in the source, changing the meaning of the sentence.
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 3: "field bus line" instead of "network cables"
+Explanation for error 3: The incorrect translation uses "field bus line" instead of "network cables", which is a less common term and may be confusing to some readers, but does not significantly change the meaning of the sentence.[SEP_WENDA]121	You are evaluating Chinese-to-English Machine translation task. The source is "并采用伺服与PLC实际测试把关，以确保为客户提供优质耐用的产品。". The model generated translation is "Servo and PLC are also used for practical testing to ensure that customers receive high-quality and durable products.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "and" instead of "and actual testing"
+Explanation for error 1: The incorrect translation omits the phrase "实际测试" which means "actual testing" from the source sentence. This is a minor error because it does not change the overall meaning of the sentence, but it is still missing content from the source.[SEP_WENDA]122	You are evaluating Chinese-to-English Machine translation task. The source is "欢迎询价!". The model generated translation is "Welcome to Question!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 1: "Question" instead of "Ask"
+Explanation for error 1: The incorrect translation uses "Question" instead of "Ask," which changes the meaning of the sentence and makes it confusing for the reader.[SEP_WENDA]123	You are evaluating Chinese-to-English Machine translation task. The source is "工厂直销生产，欢迎代理批发！". The model generated translation is "Factory direct sales production, welcome agent wholesale!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "Factory direct sales production"
+Explanation for error 2: The phrase "Factory direct sales production" is grammatically incorrect and should be "Factory direct sales manufacturing" to convey the correct meaning.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 2: "welcome agent wholesale"
+Explanation for error 2: The phrase "welcome agent wholesale" includes information not present in the source text. The correct translation should be "welcoming agents to wholesale."[SEP_WENDA]124	You are evaluating Chinese-to-English Machine translation task. The source is "另有其它长度，可定制生产。". The model generated translation is "There are other lengths that can be customized for production.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Word choice
+Major/minor: Minor
+Error location 1: "for production" instead of "produced"
+Explanation for error 1: The incorrect translation uses "for production" instead of "produced," which is a minor error in word choice but does not significantly change the meaning of the sentence.[SEP_WENDA]125	You are evaluating Chinese-to-English Machine translation task. The source is "相关定制产品，详询店家！". The model generated translation is "Customized products, inquire about the store!". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 1: "inquire about the store"
+Explanation for error 1: The incorrect translation omits the question "Are you interested in" and changes the meaning of the sentence, making it less clear that the store owner is being asked for information.[SEP_WENDA]126	You are evaluating Chinese-to-English Machine translation task. The source is "如果我们只是将订单抵免额给您，那是什么意思？". The model generated translation is "If we just give you the order credit, what does that mean?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "If we just give you"
+Explanation for error 2: The incorrect translation omits the word "simply" which changes the meaning of the sentence. The correct translation should be "If we simply give you".
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "order credit"
+Explanation for error 2: The correct term should be "order cancellation fee" instead of "order credit". This is a minor error because it does not lead to a loss of meaning but will be noticed.[SEP_WENDA]127	You are evaluating Chinese-to-English Machine translation task. The source is "可以吗". The model generated translation is "Could you?". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 1: "Could you?" instead of "Can you?"
+Explanation for error 1: The incorrect translation uses "Could you?" instead of "Can you?" which slightly changes the tone and formality of the sentence, but does not lead to a loss of meaning.[SEP_WENDA]128	You are evaluating Chinese-to-English Machine translation task. The source is "收到了，但我的 3 杯饮品全都洒出来了". The model generated translation is "I got it, but my three drinks were all spilled out.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "my three drinks were all spilled out"
+Explanation for error 2: The incorrect translation changes the meaning by stating that the drinks were all spilled out, while the correct translation should be that the drinks were all emptied.
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "I got it"
+Explanation for error 2: The incorrect translation adds the word "it" which is not present in the source text. The correct translation should be "I received it."[SEP_WENDA]129	You are evaluating Chinese-to-English Machine translation task. The source is "检查井混凝土模块生产加工设备 郑州井壁砖模块设备介绍：". The model generated translation is "Inspection of well concrete module production processing equipment Zhengzhou well brick module equipment introduction:". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "Inspection of well concrete module production processing equipment"
+Explanation for error 2: The phrase is grammatically incorrect and should be "Inspection of well concrete mold production processing equipment."
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "Zhengzhou well brick module equipment introduction"
+Explanation for error 2: The phrase does not accurately represent the source text, which is "郑州井壁砖模块设备介绍". The correct translation should be "Introduction to the Zhengzhou well brick molding equipment."[SEP_WENDA]130	You are evaluating Chinese-to-English Machine translation task. The source is "郑州宜欣是国内混凝土检查井模块砖机设备，检查井砌块机械，井壁墙体模块机械专业的生产厂家，从半自动到全自动化生产线。". The model generated translation is "Zhengzhou is a manufacturer of domestic concrete inspection well module brick machine equipment, inspection well building machine, well wall module machinery professional, from semi-automatic to fully automated production line.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Zhengzhou is a manufacturer"
+Explanation for error 2: The incorrect translation omits the word "of" between "Zhengzhou" and "is", which makes the sentence sound awkward and unclear.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "well module brick machine equipment"
+Explanation for error 2: The incorrect translation omits the word "well" from "well inspection module brick machine equipment", which changes the meaning of the sentence and makes it unclear.[SEP_WENDA]131	You are evaluating Chinese-to-English Machine translation task. The source is "通过多年的实践和开发，现具备了质量过硬，主要生产液压式、移动式、全自动化检查井系列设备及配套装置。". The model generated translation is "Through years of practice and development, we now have the quality of over-hard, mainly production of hydraulic, mobile, fully automated inspection well series equipment and supporting devices.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 4: "over-hard"
+Explanation for error 4: The correct translation should be "hardened" instead of "over-hard," which changes the meaning and makes it confusing.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "practice and development"
+Explanation for error 4: The correct translation should be "practice and experience," which is missing in the incorrect translation.
+Error type 3: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "we now have"
+Explanation for error 4: The correct translation should be "we have now," which is more formal and appropriate for the context.
+Error type 4: Incorrect spelling or capitalization
+Major/minor: Minor
+Error location 4: "mobile"
+Explanation for error 4: The correct translation should be "mobile testing," which is a compound adjective and should be written as "mobile testing" with a hyphen.[SEP_WENDA]132	You are evaluating Chinese-to-English Machine translation task. The source is "检查井混凝土模块生产加工设备 郑州井壁砖模块设备组装现场：". The model generated translation is "Inspection of well concrete module production processing equipment Zhengzhou well brick module equipment assembly site:". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "Inspection of well concrete module production processing equipment"
+Explanation for error 2: The phrase is grammatically incorrect and should be "Inspection of the production equipment for concrete well modules."
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Zhengzhou well brick module equipment assembly site:"
+Explanation for error 2: The phrase is missing the word "location" and should be "Zhengzhou, the site of the assembly of well brick module equipment."[SEP_WENDA]133	You are evaluating Chinese-to-English Machine translation task. The source is "检查井混凝土模块生产加工设备 郑州井壁砖模块设备的特点及优势:". The model generated translation is "Inspecting well concrete module production processing equipment Chongqing well brick module equipment characteristics and advantages:". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "Inspecting well concrete module production processing equipment"
+Explanation for error 2: The phrase is grammatically incorrect and should be "Inspecting the production equipment for concrete well modules"
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "Chongqing well brick module equipment"
+Explanation for error 2: The phrase is not a proper translation of "郑州井壁砖模块设备" and should be "Chongqing's well-brick masonry equipment"[SEP_WENDA]134	You are evaluating Chinese-to-English Machine translation task. The source is "宜欣检查井砌块砖机设备广泛适用于煤、热、水、电、气等市政地下构筑物的新型砌筑材料。". The model generated translation is "It is widely used for new types of coal, heat, water, electricity, gas and other municipal underground structures.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 2: "new types of coal" instead of "new types of bricks"
+Explanation for error 2: The incorrect translation changes the meaning of the source sentence by mentioning "coal" instead of "bricks."
+Error type 2: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 2: "gas" instead of "air"
+Explanation for error 2: The incorrect translation adds the word "gas" which is not present in the source sentence, but it does not lead to a loss of meaning.[SEP_WENDA]135	You are evaluating Chinese-to-English Machine translation task. The source is "如：排水、储水设施的各类检查井、雨水口、方沟、化粪池及小型构筑物、桥梁翼墙等。". The model generated translation is "For example: various inspection wells for drainage, water storage facilities, rainwater gates, square gates, wastewater pools and small structures, bridge wing walls, etc.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "rainwater gates" and "square gates"
+Explanation for error 2: The translation of "雨水口" and "方沟" should be "stormwater outlets" and "drainage channels," respectively. The incorrect translation uses "rainwater gates" and "square gates," which are not the correct terms and could confuse readers.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Minor
+Error location 2: "wastewater pools"
+Explanation for error 2: The translation of "化粪池" should be "sewage pools." The incorrect translation uses "wastewater pools," which is not an accurate representation of the source text.[SEP_WENDA]136	You are evaluating Chinese-to-English Machine translation task. The source is "使用混凝土模块筑建检查井的优势在于模块的上下左右四周均为凹凸槽结构，组合砌筑形成链锁。". The model generated translation is "The advantage of using concrete modules to build inspection wells lies in the fact that the upper and lower four of the modules are a crumbling structure, and the combination of builds forms a chain lock.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "four of the modules"
+Explanation for error 2: The correct phrase should be "four sides of the modules" to convey the intended meaning of the crumbling structure.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "builds forms a chain lock"
+Explanation for error 2: The correct phrase should be "the combination of bricks forms a chain lock" to accurately convey the meaning of the source sentence and maintain proper style.[SEP_WENDA]137	You are evaluating Chinese-to-English Machine translation task. The source is "井壁墙体抗剪力远优于平摩擦砌体的砌筑形式。". The model generated translation is "The cutting resistance of the well wall wall is far superior to the flat friction mould form.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 2: "The cutting resistance of the well wall wall"
+Explanation for error 2: The incorrect translation has a grammatical error in the phrase "The cutting resistance of the well wall wall". The correct phrase should be "The resistance of the well wall to cutting".
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 2: "flat friction mould form"
+Explanation for error 2: The incorrect translation uses the phrase "flat friction mould form" instead of the correct term "masonry wall form". This stylistic error may confuse or mislead the reader.[SEP_WENDA]138	You are evaluating Chinese-to-English Machine translation task. The source is "模块为中空结构，组合砌筑后纵向孔孔相通，横向孔孔相贯，孔芯浇注后，形成现浇混凝土网状结构，起到了二次补强和防水作用。". The model generated translation is "The module is a mid-air structure, the combination of the construction and the vertical conveyor connection, the horizontal conveyor consistency, the conveyor core after the infusion, the formation of the current concrete grid structure, played a secondary reinforcement and waterproof role.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 4: "the combination of the construction and the vertical conveyor connection,"
+Explanation for error 4: The incorrect translation has a grammatical error in the phrase, making it difficult to understand. The correct translation should be "the combination of the construction and the vertical conveyor openings."
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "the horizontal conveyor consistency,"
+Explanation for error 4: The incorrect translation has a stylistic problem in the phrase, making it difficult to understand. The correct translation should be "the horizontal conveyor openings are consistent with each other."
+Error type 3: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "the conveyor core after the infusion,"
+Explanation for error 4: The incorrect translation is missing the content "after" from the source, making it difficult to understand. The correct translation should be "the conveyor core is infused afterward."
+Error type 4: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 4: "waterproof role"
+Explanation for error 4: The incorrect translation includes the word "role" which is not present in the source. The correct translation should be "waterproof function."[SEP_WENDA]139	You are evaluating Chinese-to-English Machine translation task. The source is "模块纵横均设有插筋槽，横向卧筋、纵向插筋相应提高结构整体强度。". The model generated translation is "The module is vertically equipped with a plug, and the horizontal plug and vertical plug correspondingly improve the overall strength of the structure.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "The module is vertically equipped with a plug"
+Explanation for error 2: The original text states that the module is horizontally cross-braced, but the incorrect translation says it is vertically equipped, which changes the meaning.
+Error type 2: Incorrect translation does not accurately represent the source
+Major/minor: Major
+Error location 2: "horizontal plug and vertical plug correspondingly improve"
+Explanation for error 2: The original text states that the horizontal and vertical bracing reinforce each other, but the incorrect translation says the horizontal and vertical plugs correspondently improve, which is not the same meaning.[SEP_WENDA]140	You are evaluating Chinese-to-English Machine translation task. The source is "另外使用混凝土检查井模块砌筑出来的检查井、排水井不容易出现坍塌，下沉，漏水等现象，井壁墙体模块机械性能稳定，操作简单，成形尺寸标准。". The model generated translation is "In addition, the use of concrete inspection bridge module to build out inspection wells, drainage wells is not easy to appear collapse, sinking, water leakage and other phenomena, the mechanical performance of the bridge wall module is stable, simple operation, molding size standard.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 3 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 3: "the use of concrete inspection bridge module to build out inspection wells, drainage wells"
+Explanation for error 3: The incorrect translation has incorrect grammar and sentence structure, making it difficult to understand.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 3: "collapse, sinking, water leakage and other phenomena"
+Explanation for error 3: The incorrect translation is missing the specific content of "frost heaving" from the source sentence.
+Error type 3: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 3: "molding size standard"
+Explanation for error 3: The incorrect translation includes "molding size standard" which is not present in the source sentence. The correct translation should be "standardized molding dimensions."[SEP_WENDA]141	You are evaluating Chinese-to-English Machine translation task. The source is "混凝土检查井模块砖机设备智能控制配备数据输入、输出装置一键通触摸式液晶显示监控机械操作全部过程，实现理想的人机对话、自动分析比料、密度运转、安全逻辑控制及故障诊断系统。". The model generated translation is "Intelligent control of data input and output equipment with one-touch touch LCD display monitoring mechanical operation of the entire process, to the ideal human machine conversation, automatic analysis of comparisons, density operation, safety logic control and fault diagnosis system.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 4: "Intelligent control of data input and output equipment"
+Explanation for error 4: The phrase should be "Intelligent control of data input and output devices" to match the original meaning.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "to the ideal human machine conversation"
+Explanation for error 4: The phrase should be "achieving ideal human-machine interaction" to convey the correct meaning and maintain the style of the original sentence.
+Error type 3: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "with one-touch touch LCD display"
+Explanation for error 4: The translation should include "touchscreen" to accurately represent the source content.
+Error type 4: Incorrect translation includes information not present in the source
+Major/minor: Minor
+Error location 4: "safety logic control"
+Explanation for error 4: The translation should be "safety control logic" to accurately represent the source content.[SEP_WENDA]142	You are evaluating Chinese-to-English Machine translation task. The source is "井壁墙体模块机械液压系统采用单缸液压、输送，双缸液压、输送。". The model generated translation is "The mechanical hydraulic system uses single-cylinder hydraulics, transportation, double-cylinder hydraulics, and transportation.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 2 errors:
+output_dataError type 1: Incorrect translation has stylistic problems
+Major/minor: Minor
+Error location 2: "transportation" instead of "transmission"
+Explanation for error 2: The use of "transportation" instead of "transmission" is a minor stylistic error that does not change the meaning of the sentence but may be noticed by the reader.
+Error type 2: Incorrect translation is missing content from the source
+Major/minor: Minor
+Error location 2: Missing "and" between "double-cylinder hydraulics" and "transportation"
+Explanation for error 2: The omission of "and" between "double-cylinder hydraulics" and "transportation" is a minor error that does not change the meaning of the sentence but may be noticed by the reader.[SEP_WENDA]143	You are evaluating Chinese-to-English Machine translation task. The source is "独立的液压集成站，避免了由于主机振动对液压系统的影响，从而保证液压系统工作的可靠性。". The model generated translation is "Independent hydraulic integration station avoids the impact of the hydraulic system due to the host vibration, thus ensuring the reliability of the hydraulic system.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 1 error:
+Error type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 1: "the impact of the hydraulic system"
+Explanation for error 1: The incorrect translation changes the meaning by stating that the impact is on the hydraulic system, rather than the impact being avoided due to the independent hydraulic integration station.[SEP_WENDA]144	You are evaluating Chinese-to-English Machine translation task. The source is "混凝土检查井模块砖机设备布料箱行进模箱脱模上升，储料箱门关闭，自动输送托板，全部由液压系统独立完成，从而达到减少机械的磨损和维修。". The model generated translation is "Concrete inspection bridge module bridge machine equipment cloth box mould box disassembly rises, storage box door closure, automatic transportation board, all by the hydraulic system independently completed, so as to reduce mechanical wear and repair.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your Translation contains 4 errors:
+output_dataError type 1: Problems with grammar, other than orthography
+Major/minor: Major
+Error location 4: "Concrete inspection bridge module bridge machine equipment cloth box mould box disassembly rises"
+Explanation for error 4: The phrase is grammatically incorrect and does not convey the intended meaning of the source sentence.
+Error type 2: Incorrect translation has stylistic problems
+Major/minor: Major
+Error location 4: "storage box door closure"
+Explanation for error 4: The incorrect translation does not mention the "closure" of the "storage box," which is an important detail in the source sentence.
+Error type 3: Incorrect translation is missing content from the source
+Major/minor: Major
+Error location 4: "automatic transportation board"
+Explanation for error 4: The incorrect translation omits the "board" part of "automatic transportation board," which is an important detail in the source sentence.
+Error type 4: Incorrect translation includes information not present in the source
+Major/minor: Major
+Error location 4: "all by the hydraulic system independently completed"
+Explanation for error 4: The incorrect translation adds the phrase "completed" which is not present in the source sentence, and it changes the meaning by saying it was "independently completed" instead of "completed through the hydraulic system."[SEP_WENDA]
