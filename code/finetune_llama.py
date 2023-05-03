@@ -1,22 +1,19 @@
 # pip install git+https://github.com/huggingface/transformers transformers-4.28.0.dev0
 
-from transformers import LlamaForCausalLM, LlamaTokenizer
+from transformers import LlamaForCausalLM
 import torch
 import json
 from datasets import load_dataset
 from transformers import (
-    DataCollatorWithPadding, 
     AutoConfig,
     Trainer,
     TrainingArguments
 )
-from scipy import stats
-import torch.nn as nn
 import copy
-from typing import Optional, Dict, Sequence
+from typing import Dict, Sequence
 import transformers
 from torch.utils.data import Dataset
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 import click
 
 """deepspeed --num_gpus 8 code/finetune_llama.py"""
@@ -118,7 +115,7 @@ def _tokenize_fn(strings: Sequence[str], tokenizer: transformers.PreTrainedToken
             truncation=True,
         )
         for text in strings
-    ]
+    ] 
     input_ids = labels = [tokenized.input_ids[0] for tokenized in tokenized_list]
     input_ids_lens = labels_lens = [
         tokenized.input_ids.ne(tokenizer.pad_token_id).sum().item() for tokenized in tokenized_list

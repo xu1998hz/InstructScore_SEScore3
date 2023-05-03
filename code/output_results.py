@@ -128,7 +128,6 @@ def main(ckpt_addr):
     with torch.no_grad():
         decoded = llama.generate([txt]*8, max_gen_len=512, temperature=0)
         print(decoded)
-        #print(tokenizer.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenization_spaces=True))
     print(time.time()-start_time)
 
 if __name__ == "__main__":

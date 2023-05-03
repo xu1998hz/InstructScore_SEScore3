@@ -3,22 +3,31 @@ import json
 import torch
 import os
 from tqdm.auto import tqdm
-from typing import Optional, Dict, Sequence
 import transformers
 from transformers import LlamaForCausalLM, LlamaTokenizer
+from typing import List, Dict
+import time
 
+ds_config = "config/ds_config_zero3.json"
 DEFAULT_PAD_TOKEN = "[PAD]"
 DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
+KEY_TYPE = "type"
+KEY_INSTANCES = "instances"
+# changeable parameters
 MAX_SOURCE_LENGTH = 512
 MAX_TARGET_LENGTH = 512
-batch_size=1
-padding_strategy = "left"
+IGNORE_INDEX=-100
+MAX_SEQ_LEN = 720
+batch_size = 2
+padding_strategy = "right" # for current batch inference we only support right padding
 print("Max source length: ", MAX_SOURCE_LENGTH)
-print("MAX target length: ", MAX_TARGET_LENGTH)
+print("Max target length: ", MAX_TARGET_LENGTH)
+print("Max length: ", MAX_SEQ_LEN)
 print("Batch Size: ", batch_size)
 print("Padding Strategy: ", padding_strategy)
+print("Ignore index: ", IGNORE_INDEX)
 
 def smart_tokenizer_and_embedding_resize(
     special_tokens_dict: Dict,
@@ -27,7 +36,7 @@ def smart_tokenizer_and_embedding_resize(
     """Resize tokenizer and embedding.
     Note: This is the unoptimized version that may make your embedding size not be divisible by 64.
     """
-    num_new_tokens = tokenizer.add_special_tokens(special_tokens_dict)
+    tokenizer.add_special_tokens(special_tokens_dict)
     tokenizer.add_special_tokens(
         {
             "eos_token": DEFAULT_EOS_TOKEN,
@@ -36,11 +45,73 @@ def smart_tokenizer_and_embedding_resize(
         }
     )
 
+class LLaMA:
+    def __init__(self, model, tokenizer):
+        self.model = model
+        self.tokenizer = tokenizer
+
+    def generate(
+        self,
+        prompts: List[str],
+        max_gen_len: int,
+        temperature: float = 0.8,
+        top_p: float = 0.95,
+    ) -> List[str]:
+        bsz = len(prompts)
+        prompt_tokens = [self.tokenizer.encode(x) for x in prompts]
+
+        min_prompt_size = min([len(t) for t in prompt_tokens])
+        max_prompt_size = max([len(t) for t in prompt_tokens])
+
+        total_len = min(MAX_SEQ_LEN, MAX_TARGET_LENGTH + max_prompt_size)
+
+        tokens = torch.full((bsz, total_len), self.tokenizer.get_vocab()[DEFAULT_PAD_TOKEN]).cuda().long()
+        for k, t in enumerate(prompt_tokens):
+            tokens[k, : len(t)] = torch.tensor(t).long()
+        input_text_mask = tokens != self.tokenizer.get_vocab()[DEFAULT_PAD_TOKEN]
+        start_pos = min_prompt_size
+        prev_pos = 0
+        pad_id = self.tokenizer.get_vocab()[DEFAULT_PAD_TOKEN]
+        for cur_pos in range(start_pos, total_len):
+            start_time=time.time()
+            torch.cuda.synchronize(device=None)
+            logits = self.model.forward(tokens[:, prev_pos:cur_pos]).logits[:, -1, :]
+            torch.cuda.synchronize(device=None)
+            print("Model duration: ", time.time()-start_time)
+            if temperature > 0:
+                probs = torch.softmax(logits / temperature, dim=-1)
+                next_token = sample_top_p(probs, top_p)
+            else:
+                next_token = torch.argmax(logits, dim=-1)
+            next_token = next_token.reshape(-1)
+            # only replace token if prompt has already been generated
+            next_token = torch.where(
+                input_text_mask[:, cur_pos], tokens[:, cur_pos], next_token
+            )
+            # implement the early step criterion for generation
+            start_time=time.time()
+            torch.cuda.synchronize(device=None)
+            all_eos_tokens = next_token == pad_id
+            if all_eos_tokens.all():
+                break
+            torch.cuda.synchronize(device=None)
+            print("Checking duration: ", time.time()-start_time)
+            tokens[:, cur_pos] = next_token
+        return tokens
+
+def sample_top_p(probs, p):
+    probs_sort, probs_idx = torch.sort(probs, dim=-1, descending=True)
+    probs_sum = torch.cumsum(probs_sort, dim=-1)
+    mask = probs_sum - probs_sort > p
+    probs_sort[mask] = 0.0
+    probs_sort.div_(probs_sort.sum(dim=-1, keepdim=True))
+    next_token = torch.multinomial(probs_sort, num_samples=1)
+    next_token = torch.gather(probs_idx, -1, next_token)
+    return next_token
+
 def batchify(lst, batch_size):
     for i in range(0, len(lst), batch_size):
         yield lst[i:min(i+batch_size, len(lst))]
-
-tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf', model_max_length=MAX_SOURCE_LENGTH, padding_side=padding_strategy, use_fast=False)
 
 @click.command()
 @click.option('-wmt')
@@ -103,8 +174,6 @@ def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index
                     json.dump(final_src_dict, f)
                 print(f"test_{wmt}_{lang}_{sys_name} ref and src files are saved!")
     else:
-        KEY_TYPE = "type"
-        KEY_INSTANCES = "instances"
         # sanity check over the fields of json file
         with open(f'test_{wmt}_{lang}/{src_ref}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data.json') as fin:
             json_data = json.load(fin)
@@ -121,13 +190,13 @@ def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index
                 )
         device_id = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu") 
         model = LlamaForCausalLM.from_pretrained(ckpt_addr).to(device_id)
+        tokenizer = LlamaTokenizer.from_pretrained('decapoda-research/llama-7b-hf')
         model.eval()
-
         smart_tokenizer_and_embedding_resize(
             special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
             tokenizer=tokenizer,
         )
-
+        llama = LLaMA(model, tokenizer)
         print("Vocab Size: ", len(tokenizer))
         print("Loaded in model and tokenizer!")
         
@@ -139,12 +208,14 @@ def main(wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index
             with tqdm(total=int(len(json_data["instances"][start_index:end_index])/batch_size)+1) as pbar:
                 for txts_dict in batchify(json_data["instances"][start_index:end_index], batch_size):
                     batch_txts = [txt_dict["input"] for txt_dict in txts_dict]
-                    input_ids = tokenizer(batch_txts[0], return_tensors="pt").input_ids.to(device_id) # , padding='max_length' truncation=True, max_length=MAX_SOURCE_LENGTH, 
-                    outputs = model.generate(input_ids, max_new_tokens=MAX_TARGET_LENGTH)
+                    start_time = time.time()
+                    outputs = llama.generate(batch_txts, max_gen_len=MAX_TARGET_LENGTH, temperature=0) # for reproducibility
+                    print("duration1: ", time.time()-start_time)
                     batch_outputs = tokenizer.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenization_spaces=True)
-                    for output in batch_outputs: 
-                        save_file.write(str(global_step+start_index)+'\t'+output+'[SEP_WENDA]')
-                        global_step+=1
+                    print(batch_outputs)
+                    # for output in batch_outputs: 
+                    #     save_file.write(str(global_step+start_index)+'\t'+output+'[SEP_WENDA]')
+                    #     global_step+=1
                     pbar.update(1)
 
         print("File is saved!")
