@@ -20,11 +20,16 @@ DEFAULT_PAD_TOKEN = "[PAD]"
 DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
+max_length = 1024
+padding_strategy = 'right'
 
 # Load the value-head model and tokenizer.
 tokenizer = AutoTokenizer.from_pretrained(
-    "decapoda-research/llama-7b-hf", use_auth_token=True
-)
+        "decapoda-research/llama-7b-hf",
+        model_max_length=max_length,
+        padding_side=padding_strategy,
+        use_fast=False,
+    )
 config = AutoConfig.from_pretrained("decapoda-research/llama-7b-hf")
 tokenizer.add_special_tokens(
     {
@@ -41,7 +46,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
 # Load the dataset using the HuggingFace dataset library
 extensions = "json"
 KEY_INSTANCES = "instances"
-raw_dataset = load_dataset(
+train_dataset = load_dataset(
     extensions,
     data_files=["final_pairwise_data.json"],
     field=KEY_INSTANCES,
@@ -49,7 +54,7 @@ raw_dataset = load_dataset(
     use_auth_token=None,
 )
 
-print(raw_dataset)
+print(train_dataset)
 
 
 # Turn the dataset into pairs of post + summaries, where text_j is the preferred question + answer and text_k is the other.
@@ -72,6 +77,15 @@ def preprocess_function(examples):
 
     return new_examples
 
+num_proc=24
+original_columns = train_dataset.column_names
+# preprocess the dataset and filter out QAs that are longer than script_args.max_length
+train_dataset = train_dataset.map(
+    preprocess_function, batched=True, num_proc=num_proc, remove_columns=original_columns
+)
+train_dataset = train_dataset.filter(
+    lambda x: len(x["input_ids_j"]) <= max_length and len(x["input_ids_k"]) <= max_length
+)
 
 # We need to define a special data collator that batches the data in our j vs k format.
 @dataclass
@@ -122,17 +136,17 @@ class RewardDataCollatorWithPadding:
         return batch
 
 
-# Define the metric that we'll use for validation.
-accuracy = evaluate.load("accuracy")
+# # # Define the metric that we'll use for validation.
+# # accuracy = evaluate.load("accuracy")
 
 
-def compute_metrics(eval_pred):
-    predictions, _ = eval_pred
-    # Here, predictions is rewards_j and rewards_k.
-    # We want to see how much of the time rewards_j > rewards_k.
-    predictions = np.argmax(predictions, axis=0)
-    labels = np.zeros(predictions.shape)
-    return accuracy.compute(predictions=predictions, references=labels)
+# # def compute_metrics(eval_pred):
+# #     predictions, _ = eval_pred
+# #     # Here, predictions is rewards_j and rewards_k.
+# #     # We want to see how much of the time rewards_j > rewards_k.
+# #     predictions = np.argmax(predictions, axis=0)
+# #     labels = np.zeros(predictions.shape)
+# #     return accuracy.compute(predictions=predictions, references=labels)
 
 
 class RewardTrainer(Trainer):
@@ -149,29 +163,23 @@ class RewardTrainer(Trainer):
             return loss, {"rewards_j": rewards_j, "rewards_k": rewards_k}
         return loss
 
-
+output_dir='reward_model_ckpt'
+ds_config = "config/ds_config_zero3.json"
 training_args = TrainingArguments(
-    output_dir=output_name,
-    learning_rate=script_args.learning_rate,
-    per_device_train_batch_size=script_args.per_device_train_batch_size,
-    per_device_eval_batch_size=script_args.per_device_eval_batch_size,
-    num_train_epochs=script_args.num_train_epochs,
-    weight_decay=script_args.weight_decay,
-    evaluation_strategy="steps",
-    eval_steps=500,
-    save_strategy="steps",
-    save_steps=500,
+    output_dir=output_dir,
+    learning_rate=2e-5,
+    per_device_train_batch_size=1,
+    num_train_epochs=1,
+    weight_decay=0,
+    evaluation_strategy='no',
+    save_strategy="epoch",
     gradient_accumulation_steps=8,
-    gradient_checkpointing=script_args.gradient_checkpointing,
-    deepspeed=script_args.deepspeed,
-    local_rank=script_args.local_rank,
-    remove_unused_columns=False,
+    deepspeed=ds_config,
     label_names=[],
-    bf16=script_args.bf16,
+    fp16=True,
     logging_strategy="steps",
-    logging_steps=10,
-    optim=script_args.optim,
-    lr_scheduler_type=script_args.lr_scheduler_type,
+    logging_steps=1,
+    lr_scheduler_type="cosine",
 )
 
 # Train the model, woohoo.
@@ -179,11 +187,11 @@ trainer = RewardTrainer(
     model=model,
     args=training_args,
     train_dataset=train_dataset,
-    eval_dataset=eval_dataset,
-    compute_metrics=compute_metrics,
-    data_collator=RewardDataCollatorWithPadding(tokenizer=tokenizer, max_length=1024),
+    eval_dataset=None,
+    # compute_metrics=compute_metrics,
+    data_collator=RewardDataCollatorWithPadding(tokenizer=tokenizer, max_length=max_length),
 )
 
 trainer.train()
 print("Saving last checkpoint of the model")
-model.save_pretrained(output_name)
+model.save_pretrained(output_dir)
