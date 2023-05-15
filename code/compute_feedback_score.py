@@ -160,6 +160,16 @@ for index, sen_dict in data.items():
 
 print("Better: ", len(total_better_ls))
 print("Worse: ", len(total_worse_ls))
+save_final_dict = {
+    "type": "text2text",
+    "instances": [
+        {"response_j": ele_better, "response_k": ele_worse}
+        for ele_better, ele_worse in zip(total_better_ls, total_worse_ls)
+    ],
+}
+with open("final_pairwise_data.json", "w") as f:
+    json.dump(save_final_dict, f)
+print("File is saved!")
 print("Error location hallucination error: ", err_loc_err / total)
 print("Error location inconsistency error: ", inconsistency_err_loc / total)
 print("Error type inconsistency error: ", inconsistency_err_type / total)
