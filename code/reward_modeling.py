@@ -174,6 +174,7 @@ training_args = TrainingArguments(
     evaluation_strategy='no',
     save_strategy="epoch",
     gradient_accumulation_steps=8,
+    remove_unused_columns=True,
     deepspeed=ds_config,
     label_names=[],
     fp16=True,
