@@ -58,6 +58,7 @@ tokenizer.padding_side = "left"
 @click.option("-end_index", type=int)
 @click.option("-batch_size", type=int)
 @click.option("-sample", type=bool)
+@click.option("-num_ret", type=int)
 def main(
     wmt,
     lang,
@@ -69,6 +70,7 @@ def main(
     end_index,
     batch_size,
     sample,
+    num_ret,
 ):
     if not loaded:
         if lang == "zh-en":
@@ -167,10 +169,16 @@ def main(
         print("Loaded in model and tokenizer!")
 
         index = ckpt_addr.split("-")[-1]
-        save_file = open(
-            f"test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}.txt",
-            "w",
-        )
+        if sample:
+            save_file = open(
+                f"test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}_sample_{num_ret}.txt",
+                "w",
+            )
+        else:
+            save_file = open(
+                f"test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}.txt",
+                "w",
+            )
 
         global_step = 0
         with torch.no_grad():
@@ -199,7 +207,7 @@ def main(
                             do_sample=True,
                             top_p=0.95,
                             temperature=0.8,
-                            num_return_sequences=8,
+                            num_return_sequences=num_ret,
                         )
                     else:
                         outputs = model.generate(
