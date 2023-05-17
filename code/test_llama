@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Specifying every sbatch parameters will make things easier
+
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=20GB
+#SBATCH --gpus=1
+#SBATCH --partition=debug
+#SBATCH --time=3-1:00:00
+#SBATCH --account=wendaxu
+#SBATCH --mail-type=all
+#SBATCH --mail-user=wendaxu@ucsb.edu 
+#SBATCH --output=stdout.txt
+#SBATCH --error=stderr.txt
+
+nohup deepspeed --include localhost:4,5,6,7 code/reward_modeling.py > reward_model.out 2>&1 &

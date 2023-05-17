@@ -25,7 +25,7 @@ def smart_tokenizer_and_embedding_resize(
     """Resize tokenizer and embedding.
     Note: This is the unoptimized version that may make your embedding size not be divisible by 64.
     """
-    num_new_tokens = tokenizer.add_special_tokens(special_tokens_dict)
+    tokenizer.add_special_tokens(special_tokens_dict)
     tokenizer.add_special_tokens(
         {
             "eos_token": DEFAULT_EOS_TOKEN,
@@ -43,6 +43,7 @@ def batchify(lst, batch_size):
 tokenizer = LlamaTokenizer.from_pretrained(
     "decapoda-research/llama-7b-hf", model_max_length=MAX_SOURCE_LENGTH, use_fast=False
 )
+# enable batch inference by left padding
 tokenizer.padding_side = "left"
 
 
@@ -56,8 +57,18 @@ tokenizer.padding_side = "left"
 @click.option("-start_index", type=int)
 @click.option("-end_index", type=int)
 @click.option("-batch_size", type=int)
+@click.option("-sample", type=bool)
 def main(
-    wmt, lang, loaded, src_ref, sys_name, ckpt_addr, start_index, end_index, batch_size
+    wmt,
+    lang,
+    loaded,
+    src_ref,
+    sys_name,
+    ckpt_addr,
+    start_index,
+    end_index,
+    batch_size,
+    sample,
 ):
     if not loaded:
         if lang == "zh-en":
@@ -180,29 +191,47 @@ def main(
                         truncation=True,
                         max_length=MAX_SOURCE_LENGTH,
                     )
-                    start_time = time.time()
-                    torch.cuda.synchronize(device=None)
-                    outputs = model.generate(
-                        inputs["input_ids"].to(device_id),
-                        attention_mask=inputs["attention_mask"].to(device_id),
-                        max_new_tokens=MAX_TARGET_LENGTH,
-                    )
-                    torch.cuda.synchronize(device=None)
-                    print(time.time() - start_time)
+                    if sample:
+                        outputs = model.generate(
+                            inputs["input_ids"].to(device_id),
+                            attention_mask=inputs["attention_mask"].to(device_id),
+                            max_new_tokens=MAX_TARGET_LENGTH,
+                            do_sample=True,
+                            top_p=0.95,
+                            temperature=0.8,
+                            num_return_sequences=8,
+                        )
+                    else:
+                        outputs = model.generate(
+                            inputs["input_ids"].to(device_id),
+                            attention_mask=inputs["attention_mask"].to(device_id),
+                            max_new_tokens=MAX_TARGET_LENGTH,
+                        )
                     batch_outputs = tokenizer.batch_decode(
                         outputs,
                         skip_special_tokens=True,
                         clean_up_tokenization_spaces=True,
                     )
-                    for output in batch_outputs:
-                        print(output)
-                        save_file.write(
-                            str(global_step + start_index)
-                            + "\t"
-                            + output
-                            + "[SEP_WENDA]"
-                        )
+                    if sample:
+                        for index, output in enumerate(batch_outputs):
+                            save_file.write(
+                                str(global_step + start_index)
+                                + "\t"
+                                + str(index)
+                                + "\t"
+                                + output
+                                + "[SEP_WENDA]"
+                            )
                         global_step += 1
+                    else:
+                        for output in batch_outputs:
+                            save_file.write(
+                                str(global_step + start_index)
+                                + "\t"
+                                + output
+                                + "[SEP_WENDA]"
+                            )
+                            global_step += 1
                     pbar.update(1)
 
         print("File is saved!")

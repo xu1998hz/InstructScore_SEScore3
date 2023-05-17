@@ -47,22 +47,24 @@ for index, sen_dict in data.items():
                     total += 1
                     """Check all for major/minor labels"""
                     if feedback_dict["labels"][err_index] != err_dict["Q4"]:
+                        cur_err_dict[err_key]["major_minor"] = 0
+                        cur_err_dict[err_key]["explanation"] = 0
                         if (
                             err_dict["Q4"] == "no-error"
                             and feedback_dict["labels"][err_index] == "minor-error"
                         ):
                             num_no_err_minor_disagreement += 1
+                            cur_err_dict[err_key]["err_type"] = 0
+                            cur_err_dict[err_key]["err_loc"] = 0
                         elif (
                             err_dict["Q4"] == "no-error"
                             and feedback_dict["labels"][err_index] == "major-error"
                         ):
+                            cur_err_dict[err_key]["err_type"] = 0
+                            cur_err_dict[err_key]["err_loc"] = 0
                             num_no_err_major_disagreement += 1
                         else:
                             num_minor_major_disagreement += 1
-                        cur_err_dict[err_key]["err_type"] = 0
-                        cur_err_dict[err_key]["err_loc"] = 0
-                        cur_err_dict[err_key]["major_minor"] = 0
-                        cur_err_dict[err_key]["explanation"] = 0
 
                     """Check all for Error locations"""
                     # check hallucination cases on error location
@@ -90,6 +92,7 @@ for index, sen_dict in data.items():
                         cur_err_dict[err_key]["explanation"] = 0
 
                     # check the consistency between error location and explanation
+                    print(err_dict["Q6"])
                     if err_dict["Q6"] != "Yes":
                         inconsistency_err_loc += 1
                         cur_err_dict[err_key]["err_loc"] = 0
