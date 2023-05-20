@@ -171,7 +171,7 @@ def main(
         index = ckpt_addr.split("-")[-1]
         if sample:
             save_file = open(
-                f"test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}_sample_{num_ret}.txt",
+                f"test_{wmt}_{lang}/SEScore3_output_sample_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}_sample_{num_ret}.txt",
                 "w",
             )
         else:
