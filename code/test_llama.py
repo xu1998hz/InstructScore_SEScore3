@@ -199,47 +199,50 @@ def main(
                         truncation=True,
                         max_length=MAX_SOURCE_LENGTH,
                     )
-                    if sample:
-                        outputs = model.generate(
-                            inputs["input_ids"].to(device_id),
-                            attention_mask=inputs["attention_mask"].to(device_id),
-                            max_new_tokens=MAX_TARGET_LENGTH,
-                            do_sample=True,
-                            top_p=0.95,
-                            temperature=0.8,
-                            num_return_sequences=num_ret,
-                        )
-                    else:
-                        outputs = model.generate(
-                            inputs["input_ids"].to(device_id),
-                            attention_mask=inputs["attention_mask"].to(device_id),
-                            max_new_tokens=MAX_TARGET_LENGTH,
-                        )
-                    batch_outputs = tokenizer.batch_decode(
-                        outputs,
-                        skip_special_tokens=True,
-                        clean_up_tokenization_spaces=True,
-                    )
-                    if sample:
-                        for index, output in enumerate(batch_outputs):
-                            save_file.write(
-                                str(global_step + start_index)
-                                + "\t"
-                                + str(index)
-                                + "\t"
-                                + output
-                                + "[SEP_WENDA]"
+                    try:
+                        if sample:
+                            outputs = model.generate(
+                                inputs["input_ids"].to(device_id),
+                                attention_mask=inputs["attention_mask"].to(device_id),
+                                max_new_tokens=MAX_TARGET_LENGTH,
+                                do_sample=True,
+                                top_p=0.95,
+                                temperature=0.8,
+                                num_return_sequences=num_ret,
                             )
-                        global_step += 1
-                    else:
-                        for output in batch_outputs:
-                            save_file.write(
-                                str(global_step + start_index)
-                                + "\t"
-                                + output
-                                + "[SEP_WENDA]"
+                        else:
+                            outputs = model.generate(
+                                inputs["input_ids"].to(device_id),
+                                attention_mask=inputs["attention_mask"].to(device_id),
+                                max_new_tokens=MAX_TARGET_LENGTH,
                             )
+                        batch_outputs = tokenizer.batch_decode(
+                            outputs,
+                            skip_special_tokens=True,
+                            clean_up_tokenization_spaces=True,
+                        )
+                        if sample:
+                            for index, output in enumerate(batch_outputs):
+                                save_file.write(
+                                    str(global_step + start_index)
+                                    + "\t"
+                                    + str(index)
+                                    + "\t"
+                                    + output
+                                    + "[SEP_WENDA]"
+                                )
                             global_step += 1
+                        else:
+                            for output in batch_outputs:
+                                save_file.write(
+                                    str(global_step + start_index)
+                                    + "\t"
+                                    + output
+                                    + "[SEP_WENDA]"
+                                )
+                                global_step += 1
+                    except Exception as e:
+                        print(f"ERROR: {e}")
                     pbar.update(1)
 
         print("File is saved!")
