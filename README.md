@@ -13,8 +13,6 @@ To run our metric, you only need five lines
 ````
 ```
 from InstructScore import *
-from train.regression import *
-
 refs = ["Normally the administration office downstairs would call me when there’s a delivery."]
 outs = ["Usually when there is takeaway, the management office downstairs will call."]
 scorer = InstructScore()
