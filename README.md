@@ -1,2 +1,3 @@
-# SEScore3
-First explanation metric (diagnostic report) for text generation evaluation
+# InstructScore (SEScore3)
+
+An amazing explanation metric (diagnostic report) for text generation evaluation
