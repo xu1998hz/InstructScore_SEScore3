@@ -12,6 +12,7 @@ MAX_TARGET_LENGTH = 512
 print("Max source length: ", MAX_SOURCE_LENGTH)
 print("MAX target length: ", MAX_TARGET_LENGTH)
 
+
 def smart_tokenizer_and_embedding_resize(
     special_tokens_dict: Dict,
     tokenizer: transformers.PreTrainedTokenizer,
@@ -28,14 +29,14 @@ def smart_tokenizer_and_embedding_resize(
         }
     )
 
-device_id = (
-    torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-)
+
+device_id = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+
 
 class InstructScore:
-    def __init__(self):    
+    def __init__(self):
         self.tokenizer = LlamaTokenizer.from_pretrained(
-            "decapoda-research/llama-7b-hf", model_max_length=MAX_SOURCE_LENGTH, use_fast=False
+            "xu1998hz/InstructScore", model_max_length=MAX_SOURCE_LENGTH, use_fast=False
         )
         # enable batch inference by left padding
         self.tokenizer.padding_side = "left"
@@ -44,12 +45,17 @@ class InstructScore:
             special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
             tokenizer=self.tokenizer,
         )
-        self.model = LlamaForCausalLM.from_pretrained('InstructScore_English').to(device_id)
+        self.model = LlamaForCausalLM.from_pretrained("xu1998hz/InstructScore").to(
+            device_id
+        )
         self.model.eval()
+
     def score(self, ref_ls, out_ls):
-        prompt_ls=\
-        [f"You are evaluating Chinese-to-English Machine translation task. The correct translation is \"{ref}\". The model generated translation is \"{out}\". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor\
-         errors don't lead to loss of meaning but will be noticed." for ref, out in zip(ref_ls, out_ls)]
+        prompt_ls = [
+            f'You are evaluating Chinese-to-English Machine translation task. The correct translation is "{ref}". The model generated translation is "{out}". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor\
+         errors don\'t lead to loss of meaning but will be noticed.'
+            for ref, out in zip(ref_ls, out_ls)
+        ]
 
         with torch.no_grad():
             inputs = self.tokenizer(
@@ -69,17 +75,29 @@ class InstructScore:
                 skip_special_tokens=True,
                 clean_up_tokenization_spaces=True,
             )
-            scores_ls = [(-1) * output.count("Major/minor: Minor") + (-5) * output.count("Major/minor: Major") for output in batch_outputs]
+            scores_ls = [
+                (-1) * output.count("Major/minor: Minor")
+                + (-5) * output.count("Major/minor: Major")
+                for output in batch_outputs
+            ]
             return batch_outputs, scores_ls
 
+
 def main():
-    refs = ["SEScore is a simple but effective next generation text generation evaluation metric", "SEScore it really works"]
-    outs = ["SEScore is a simple effective text evaluation metric for next generation", "SEScore is not working"]
-    
+    refs = [
+        "SEScore is a simple but effective next generation text generation evaluation metric",
+        "SEScore it really works",
+    ]
+    outs = [
+        "SEScore is a simple effective text evaluation metric for next generation",
+        "SEScore is not working",
+    ]
+
     scorer = InstructScore()
     batch_outputs, scores_ls = scorer.score(refs, outs)
     print(batch_outputs)
     print(scores_ls)
+
 
 if __name__ == "__main__":
     main()
