@@ -4,7 +4,7 @@ An amazing explanation metric (diagnostic report) for text generation evaluation
 
 First step, you may download all required dependencies through: pip3 install -r requirements.txt
 
-Second step, you can download weight from this Google Drive link: https://drive.google.com/drive/folders/1seBqoewWHgu7I_AmZ6FE-_3EcJ3mGWQ2?usp=sharing
+Second step, by running following codes, weight can be directly downloaded from Huggingface or you can download weight from this Google Drive link: https://drive.google.com/drive/folders/1seBqoewWHgu7I_AmZ6FE-_3EcJ3mGWQ2?usp=sharing
 
 <div  align="center"> 
 <img src="figs/InstructScore_teaser.jpg" width=400px>
