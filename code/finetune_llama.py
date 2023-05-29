@@ -24,11 +24,10 @@ DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
 max_length = 720
-f = "data/russian_llama_ref_data.json"
-output_dir = "finetune_llama_ref_russian_april_18"
+f = "data/eval_mt_russian_llama.json"
+output_dir = "/share/edc/home/wendaxu/finetune_llama_ref_russian_may_28"
 padding_strategy = "right"
-num_epoch = 3
-
+num_epoch = 5
 
 class SupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""

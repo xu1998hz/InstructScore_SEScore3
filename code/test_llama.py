@@ -59,6 +59,7 @@ tokenizer.padding_side = "left"
 @click.option("-batch_size", type=int)
 @click.option("-sample", type=bool)
 @click.option("-num_ret", type=int)
+@click.option("-task_mode", type=str, help="evaluation or machine translation")
 def main(
     wmt,
     lang,
@@ -71,6 +72,7 @@ def main(
     batch_size,
     sample,
     num_ret,
+    task_mode
 ):
     if not loaded:
         if lang == "zh-en":
@@ -136,114 +138,115 @@ def main(
                     json.dump(final_src_dict, f)
                 print(f"test_{wmt}_{lang}_{sys_name} ref and src files are saved!")
     else:
-        KEY_TYPE = "type"
-        KEY_INSTANCES = "instances"
-        # sanity check over the fields of json file
-        with open(
-            f"test_{wmt}_{lang}/{src_ref}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data.json"
-        ) as fin:
-            json_data = json.load(fin)
-            if KEY_TYPE not in json_data.keys():
-                raise ValueError(
-                    f'"{KEY_TYPE}" field must be specified for data, e.g.'
-                    "{\n"
-                    f'   "{KEY_TYPE}: "text2text",\n'
-                    f'   "{KEY_INSTANCES}": [\n'
-                    '       { "text": "Sentence 1: This is a sentence." }\n'
-                    '       { "text": "Sentence 2: This is another sentence." }\n'
-                    f"   ]\n"
-                    "}"
-                )
-        device_id = (
-            torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-        )
-        model = LlamaForCausalLM.from_pretrained(ckpt_addr).to(device_id)
-        model.eval()
-
-        smart_tokenizer_and_embedding_resize(
-            special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
-            tokenizer=tokenizer,
-        )
-
-        print("Vocab Size: ", len(tokenizer))
-        print("Loaded in model and tokenizer!")
-
-        index = ckpt_addr.split("-")[-1]
-        if sample:
-            save_file = open(
-                f"test_{wmt}_{lang}/SEScore3_output_sample_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}_sample_{num_ret}.txt",
-                "w",
-            )
-        else:
-            save_file = open(
-                f"test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}.txt",
-                "w",
-            )
-
-        global_step = 0
-        with torch.no_grad():
-            with tqdm(
-                total=int(
-                    len(json_data["instances"][start_index:end_index]) / batch_size
-                )
-                + 1
-            ) as pbar:
-                for txts_dict in batchify(
-                    json_data["instances"][start_index:end_index], batch_size
-                ):
-                    batch_txts = [txt_dict["input"] for txt_dict in txts_dict]
-                    inputs = tokenizer(
-                        batch_txts,
-                        return_tensors="pt",
-                        padding=True,
-                        truncation=True,
-                        max_length=MAX_SOURCE_LENGTH,
+        if task_mode == 'evaluation':
+            KEY_TYPE = "type"
+            KEY_INSTANCES = "instances"
+            # sanity check over the fields of json file
+            with open(
+                f"test_{wmt}_{lang}/{src_ref}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data.json"
+            ) as fin:
+                json_data = json.load(fin)
+                if KEY_TYPE not in json_data.keys():
+                    raise ValueError(
+                        f'"{KEY_TYPE}" field must be specified for data, e.g.'
+                        "{\n"
+                        f'   "{KEY_TYPE}: "text2text",\n'
+                        f'   "{KEY_INSTANCES}": [\n'
+                        '       { "text": "Sentence 1: This is a sentence." }\n'
+                        '       { "text": "Sentence 2: This is another sentence." }\n'
+                        f"   ]\n"
+                        "}"
                     )
-                    try:
-                        if sample:
-                            outputs = model.generate(
-                                inputs["input_ids"].to(device_id),
-                                attention_mask=inputs["attention_mask"].to(device_id),
-                                max_new_tokens=MAX_TARGET_LENGTH,
-                                do_sample=True,
-                                top_p=0.95,
-                                temperature=0.8,
-                                num_return_sequences=num_ret,
-                            )
-                        else:
-                            outputs = model.generate(
-                                inputs["input_ids"].to(device_id),
-                                attention_mask=inputs["attention_mask"].to(device_id),
-                                max_new_tokens=MAX_TARGET_LENGTH,
-                            )
-                        batch_outputs = tokenizer.batch_decode(
-                            outputs,
-                            skip_special_tokens=True,
-                            clean_up_tokenization_spaces=True,
+            device_id = (
+                torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+            )
+            model = LlamaForCausalLM.from_pretrained(ckpt_addr).to(device_id)
+            model.eval()
+
+            smart_tokenizer_and_embedding_resize(
+                special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
+                tokenizer=tokenizer,
+            )
+
+            print("Vocab Size: ", len(tokenizer))
+            print("Loaded in model and tokenizer!")
+
+            index = ckpt_addr.split("-")[-1]
+            if sample:
+                save_file = open(
+                    f"test_{wmt}_{lang}/SEScore3_output_sample_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}_sample_{num_ret}.txt",
+                    "w",
+                )
+            else:
+                save_file = open(
+                    f"test_{wmt}_{lang}/SEScore3_output_{index}/test_{wmt}_{lang}_{sys_name}_llama_{src_ref}_data_{start_index}_{end_index}.txt",
+                    "w",
+                )
+
+            global_step = 0
+            with torch.no_grad():
+                with tqdm(
+                    total=int(
+                        len(json_data["instances"][start_index:end_index]) / batch_size
+                    )
+                    + 1
+                ) as pbar:
+                    for txts_dict in batchify(
+                        json_data["instances"][start_index:end_index], batch_size
+                    ):
+                        batch_txts = [txt_dict["input"] for txt_dict in txts_dict]
+                        inputs = tokenizer(
+                            batch_txts,
+                            return_tensors="pt",
+                            padding=True,
+                            truncation=True,
+                            max_length=MAX_SOURCE_LENGTH,
                         )
-                        if sample:
-                            for index, output in enumerate(batch_outputs):
-                                save_file.write(
-                                    str(global_step + start_index)
-                                    + "\t"
-                                    + str(index)
-                                    + "\t"
-                                    + output
-                                    + "[SEP_WENDA]"
+                        try:
+                            if sample:
+                                outputs = model.generate(
+                                    inputs["input_ids"].to(device_id),
+                                    attention_mask=inputs["attention_mask"].to(device_id),
+                                    max_new_tokens=MAX_TARGET_LENGTH,
+                                    do_sample=True,
+                                    top_p=0.95,
+                                    temperature=0.8,
+                                    num_return_sequences=num_ret,
                                 )
-                            global_step += 1
-                        else:
-                            for output in batch_outputs:
-                                save_file.write(
-                                    str(global_step + start_index)
-                                    + "\t"
-                                    + output
-                                    + "[SEP_WENDA]"
+                            else:
+                                outputs = model.generate(
+                                    inputs["input_ids"].to(device_id),
+                                    attention_mask=inputs["attention_mask"].to(device_id),
+                                    max_new_tokens=MAX_TARGET_LENGTH,
                                 )
+                            batch_outputs = tokenizer.batch_decode(
+                                outputs,
+                                skip_special_tokens=True,
+                                clean_up_tokenization_spaces=True,
+                            )
+                            if sample:
+                                for index, output in enumerate(batch_outputs):
+                                    save_file.write(
+                                        str(global_step + start_index)
+                                        + "\t"
+                                        + str(index)
+                                        + "\t"
+                                        + output
+                                        + "[SEP_WENDA]"
+                                    )
                                 global_step += 1
-                    except Exception as e:
-                        print(f"ERROR: {e}")
-                    pbar.update(1)
+                            else:
+                                for output in batch_outputs:
+                                    save_file.write(
+                                        str(global_step + start_index)
+                                        + "\t"
+                                        + output
+                                        + "[SEP_WENDA]"
+                                    )
+                                    global_step += 1
+                        except Exception as e:
+                            print(f"ERROR: {e}")
+                        pbar.update(1)
 
         print("File is saved!")
 

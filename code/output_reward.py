@@ -92,7 +92,7 @@ def main(sys_name):
         output_ls += [cur_ele for cur_ele in ele.values()]
 
     pipe_outputs = sentiment_pipe(output_ls, **sent_kwargs)
-    with open(f"save_{sys_name}_scores_5.json", "w") as f:
+    with open(f"save_{sys_name}_scores_3.json", "w") as f:
         json.dump({f"{sys_name}": [ele[0]["score"] for ele in pipe_outputs]}, f)
 
 
