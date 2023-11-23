@@ -68,7 +68,7 @@ You can also download the checkpoint from this Google Drive [link](https://drive
 
 ![Overview](figs/instructscore_main.png)
 
-
+```bash
 @misc{xu2023instructscore,
       title={INSTRUCTSCORE: Explainable Text Generation Evaluation with Finegrained Feedback}, 
       author={Wenda Xu and Danqing Wang and Liangming Pan and Zhenqiao Song and Markus Freitag and William Yang Wang and Lei Li},
@@ -77,3 +77,4 @@ You can also download the checkpoint from this Google Drive [link](https://drive
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
+```
