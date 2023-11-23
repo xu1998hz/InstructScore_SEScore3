@@ -69,3 +69,11 @@ You can also download the checkpoint from this Google Drive [link](https://drive
 ![Overview](figs/instructscore_main.png)
 
 
+@misc{xu2023instructscore,
+      title={INSTRUCTSCORE: Explainable Text Generation Evaluation with Finegrained Feedback}, 
+      author={Wenda Xu and Danqing Wang and Liangming Pan and Zhenqiao Song and Markus Freitag and William Yang Wang and Lei Li},
+      year={2023},
+      eprint={2305.14282},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
