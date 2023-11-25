@@ -37,8 +37,9 @@ outs = ["Usually when there is takeaway, the management office downstairs will c
 
 # Example input for table-to-text generation
 # task_type="d2t"
-# refs = ["The two girls are playing on a yellow and red jungle gym."]
-# outs = ["The woman wearing a red bow walks past a bicycle."]
+# srcs = ["['Piotr_Hallmann | height | 175.26', 'Piotr_Hallmann | weight | 70.308']"]
+# refs = ["Piotr Hallmann is 175.26 cm tall and weighs 70.308 kg."]
+# outs = ["Piotr Hallmann has a height of 175.26 m and weights 70.308."]
 
 # Example input for Commonsense text generation
 # task_type="commonsense"
