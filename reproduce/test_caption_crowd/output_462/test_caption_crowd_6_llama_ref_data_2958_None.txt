@@ -1,0 +1,49 @@
+2958	You are evaluating image captioning. The correct generation is "Children, one with a stick, and six petting a dog with a blue leash.". The model generated translation is "A dog is chewing on someone's finger.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your generation contains 1 errors:
+Error type 1: The caption inaccurately describes the actions in the correct generation
+Major/minor:  Major
+Error location 1: A dog is chewing on someone's finger
+Explanation for error 1: The incorrect generation describes a dog chewing on a finger, which is not present in the correct generation. The correct generation talks about children petting a dog, not a dog chewing on a finger.[SEP_WENDA]2959	You are evaluating image captioning. The correct generation is "Children, one with a stick, and six petting a dog with a blue leash.". The model generated translation is "Large dog plays with two smaller dogs on grass.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your generation contains 3 errors:
+Error type 1: The caption gives a partial image description, omitting important aspects
+Major/minor:  Major
+Error location 1: "Large dog"
+Explanation for error 1: The incorrect generation describes a large dog instead of a boy with a stick, which is a significant change in the image description.
+Error type 2: The caption incorrectly counts objects or elements in the correct generation
+Major/minor:  Major
+Error location 2: "two smaller dogs"
+Explanation for error 2: The incorrect generation mentions two smaller dogs instead of six smaller children, which is a significant change in the image description.
+Error type 3: The caption overemphasizes secondary aspects, detracting from the main subject
+Major/minor:  Minor
+Error location 3: "on grass"
+Explanation for error 3: The incorrect generation mentions the location (grass) which is not as important as the main subjects (children and dog) and their interaction.[SEP_WENDA]2960	You are evaluating image captioning. The correct generation is "Children, one with a stick, and six petting a dog with a blue leash.". The model generated translation is "A small black and white dog jumps at a woman in a white jeep while a golden dog follows beside them.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your generation contains 5 errors:
+Error type 1: The caption overemphasizes secondary aspects, detracting from the main subject
+Major/minor:  Major
+Error location 1: "A small black and white dog jumps at a woman in a white jeep"
+Explanation for error 1: The incorrect generation focuses on a dog jumping at a woman in a white jeep, which is not present in the correct generation.
+Error type 2: The caption misidentifies or omits objects in the correct generation
+Major/minor:  Major
+Error location 2: "A small black and white dog" and "a golden dog"
+Explanation for error 2: The incorrect generation misidentifies the children as dogs and introduces a golden dog that is not present in the correct generation.
+Error type 3: The caption wrongly describes motion or movement in the correct generation
+Major/minor:  Major
+Error location 3: "jumps"
+Explanation for error 3: The incorrect generation describes a dog jumping, which is not present in the correct generation.
+Error type 4: The caption misrepresents object locations or positions in the correct generation
+Major/minor:  Major
+Error location 4: "beside them"
+Explanation for error 4: The incorrect generation suggests that the golden dog is beside the animals, which is not mentioned in the correct generation.
+Error type 5: The caption wrongly describes object relationships in the correct generation
+Major/minor:  Major
+Error location 5: "while a golden dog follows beside them"
+Explanation for error 5: The incorrect generation describes a relationship between a golden dog and the main subject, which is not present in the correct generation.[SEP_WENDA]2961	You are evaluating image captioning. The correct generation is "Children, one with a stick, and six petting a dog with a blue leash.". The model generated translation is "A girl playing on a parachute.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your generation contains 1 errors:
+Error type 1: The caption inaccurately describes the actions in the correct generation
+Major/minor:  Major
+Error location 1: A girl playing on a parachute
+Explanation for error 1: The incorrect generation describes a girl playing on a parachute, which is not present in the correct generation and significantly changes the meaning.[SEP_WENDA]2962	You are evaluating image captioning. The correct generation is "Children, one with a stick, and six petting a dog with a blue leash.". The model generated translation is "A black dog and a white dog play in the street together.". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don't lead to loss of meaning but will be noticed.Your generation contains 2 errors:
+Error type 1: The caption misidentifies or omits objects in the correct generation
+Major/minor:  Major
+Error location 1: "black dog and a white dog"
+Explanation for error 1: The incorrect generation mentions two dogs instead of one boy with a stick and six children petting a dog.
+Error type 2: The caption overemphasizes secondary aspects, detracting from the main subject
+Major/minor:  Major
+Error location 2: "play in the street together"
+Explanation for error 2: The incorrect generation focuses on the dogs playing in the street, which is not the main subject of the image, and it also omits the boy with a stick and the six children.[SEP_WENDA]
