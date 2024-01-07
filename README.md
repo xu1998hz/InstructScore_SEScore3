@@ -66,7 +66,7 @@ else:
 
 You can also download the checkpoint from this Google Drive [link](https://drive.google.com/drive/folders/1seBqoewWHgu7I_AmZ6FE-_3EcJ3mGWQ2?usp=sharing).
 
-### Repproduce the results
+### Reproduce main table results
 
 ```
 cd reproduce
