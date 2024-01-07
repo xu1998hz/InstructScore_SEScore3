@@ -61,11 +61,17 @@ else:
     batch_outputs, scores_ls = scorer.score(ref_ls=refs, out_ls=outs)
 ```
 
+
 ### Option 2: Download weight from Google Drive
 
 You can also download the checkpoint from this Google Drive [link](https://drive.google.com/drive/folders/1seBqoewWHgu7I_AmZ6FE-_3EcJ3mGWQ2?usp=sharing).
 
+### Repproduce the results
 
+```
+cd reproduce
+python3 process_result_bagel.py # process_result_{task}.py
+```
 
 ![Overview](figs/instructscore_main.png)
 
