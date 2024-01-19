@@ -26,7 +26,7 @@ DEFAULT_UNK_TOKEN = "</s>"
 max_length = 720
 f = "data/eval_mt_russian_llama.json"
 output_dir = "/share/edc/home/wendaxu/finetune_llama_ref_russian_may_28"
-padding_strategy = "right"
+padding_strategy = "left"
 num_epoch = 5
 
 class SupervisedDataset(Dataset):
