@@ -76,12 +76,25 @@ python3 process_result_bagel.py # process_result_{task}.py
 ![Overview](figs/instructscore_main.png)
 
 ```bash
-@misc{xu2023instructscore,
-      title={INSTRUCTSCORE: Explainable Text Generation Evaluation with Finegrained Feedback}, 
-      author={Wenda Xu and Danqing Wang and Liangming Pan and Zhenqiao Song and Markus Freitag and William Yang Wang and Lei Li},
-      year={2023},
-      eprint={2305.14282},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{xu-etal-2023-instructscore,
+    title = "{INSTRUCTSCORE}: Towards Explainable Text Generation Evaluation with Automatic Feedback",
+    author = "Xu, Wenda  and
+      Wang, Danqing  and
+      Pan, Liangming  and
+      Song, Zhenqiao  and
+      Freitag, Markus  and
+      Wang, William  and
+      Li, Lei",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.365",
+    doi = "10.18653/v1/2023.emnlp-main.365",
+    pages = "5967--5994"
 }
 ```
