@@ -2,7 +2,7 @@ sentencepiece
 torch
 pandas
 matplotlib
-sklearn
+scikit-learn
 wandb
 datasets
 numpy
