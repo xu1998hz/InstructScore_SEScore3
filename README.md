@@ -25,7 +25,7 @@ You can directly try InstructScore via several lines of code:
 ```python
 from InstructScore import InstructScore
 # You can choose from 'mt_zh-en', 'caption', 'd2t', 'commonsense' or "key-to-text" to reproduce results in the paper
-task_type == 'mt_zh-en' 
+task_type = 'mt_zh-en' 
 # Example input for X-English translation
 refs = ["Normally the administration office downstairs would call me when there’s a delivery."]
 outs = ["Usually when there is takeaway, the management office downstairs will call."]
