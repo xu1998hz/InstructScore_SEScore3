@@ -53,6 +53,10 @@ outs = ["Usually when there is takeaway, the management office downstairs will c
 # refs = ["May I suggest the X? It is a moderately priced restaurant near X."]
 # outs = ["X is a restaurant in X with a moderately priced menu."]
 
+# Example input for English-to-Spanish translation (Beta testing)
+# task_type="mt_en-es"
+# refs=["Y hay una distinción muy importante allí que veremos."]
+# outs=["Y hay una distinción muy anormal allí que falta veremos."]
 
 scorer = InstructScore(device_id=device_id, task_type=task_type, batch_size=6)
 if task_type=="commonsense" or task_type=="d2t" or task_type == "key-to-text":
