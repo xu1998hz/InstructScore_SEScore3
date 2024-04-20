@@ -16,13 +16,14 @@ import click
 
 KEY_TYPE = "type"
 KEY_INSTANCES = "instances"
-ds_config = "config/ds_config_zero3.json"
-do_train = True
 IGNORE_INDEX = -100
 DEFAULT_PAD_TOKEN = "[PAD]"
 DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
+
+ds_config = "config/ds_config_zero3.json"
+do_train = True
 max_length = 720
 f = "data/english_llama_ref_data.json"
 output_dir = "/share/edc/home/wendaxu/finetune_llama_ref_2024"
@@ -242,7 +243,6 @@ def main():
 
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
-        # trainer.save_state()
 
 if __name__ == "__main__":
     main()
