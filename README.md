@@ -77,6 +77,15 @@ cd reproduce
 python3 process_result_bagel.py # process_result_{task}.py
 ```
 
+### To train your own InstructScore
+
+```
+# Training code
+deepspeed --num_gpus 8 code/finetune_llama.py --f <Your Instruction training data> --output_dir <Your saved weight dir> --max_length <Max length> --num_epoch <Epoch>
+# You can use localhost to specify specific GPU
+deepspeed --include localhost:1 code/finetune_llama.py --f <Your Instruction training data> --output_dir <Your saved weight dir> --max_length <Max length> --num_epoch <Epoch>
+```
+
 ![Overview](figs/instructscore_main.png)
 
 ```bash
