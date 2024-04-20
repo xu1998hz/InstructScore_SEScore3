@@ -44,9 +44,12 @@ class InstructScore:
             self.tokenizer = LlamaTokenizer.from_pretrained(
                 "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
             )
-            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/InstructScore").to(
-                device_id
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/InstructScore", torch_dtype=torch.bfloat16, device_map="auto")
+        elif task_type == "mt_en-es":
+            self.tokenizer = LlamaTokenizer.from_pretrained(
+                "mistralai/Mistral-7B-v0.1", model_max_length=max_src_len, use_fast=False
             )
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_en-es", torch_dtype=torch.bfloat16, device_map="auto")
         # elif task_type == 'mt_en-ru':
         #     self.tokenizer = LlamaTokenizer.from_pretrained(
         #         "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
@@ -65,23 +68,20 @@ class InstructScore:
             self.tokenizer = LlamaTokenizer.from_pretrained(
                 "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
             )
-            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_caption").to(
-                device_id
-            )
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_caption", torch_dtype=torch.bfloat16, device_map="auto")
+        
         elif self.task_type == 'd2t':
             self.tokenizer = LlamaTokenizer.from_pretrained(
                 "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
             )
-            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_data2text").to(
-                device_id
-            )
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_data2text", torch_dtype=torch.bfloat16, device_map="auto")
+            
         elif self.task_type == 'commonsense':
             self.tokenizer = LlamaTokenizer.from_pretrained(
                 "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
             )
-            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_commonsense").to(
-                device_id
-            )
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_commonsense", torch_dtype=torch.bfloat16, device_map="auto")
+
         else:
             print("Task weights are not supported!")
             exit(1)
@@ -120,6 +120,11 @@ class InstructScore:
         elif self.task_type == 'mt_en-ru':
             prompt_ls = [
                 f'You are evaluating English-to-Russian Machine translation task. The correct translation is "{ref}". The model generated translation is "{out}". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don\'t lead to loss of meaning but will be noticed.'
+                for ref, out in zip(ref_ls, out_ls)
+            ]
+        elif self.task_type == 'mt_en-es':
+            prompt_ls = [
+                f'You are evaluating English-to-Spanish Machine translation task. The correct translation is "{ref}". The model generated translation is "{out}". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor errors don\'t lead to loss of meaning but will be noticed.'
                 for ref, out in zip(ref_ls, out_ls)
             ]
         elif self.task_type == 'caption':
@@ -162,9 +167,11 @@ class InstructScore:
                         inputs["input_ids"].to(self.device_id),
                         attention_mask=inputs["attention_mask"].to(self.device_id),
                         max_new_tokens=self.max_trg_len,
+                        do_sample=False, 
+                        temperature=0
                     )
                     batch_outputs = self.tokenizer.batch_decode(
-                        outputs,
+                        outputs[:, inputs.input_ids.shape[1]:],
                         skip_special_tokens=True,
                         clean_up_tokenization_spaces=True,
                     )
@@ -199,12 +206,9 @@ def batchify(data: Iterable[T], batch_size: int) -> Iterable[List[T]]:
 def main():
     device_id = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
-    # Example input for Data-to-text generation
-    task_type="d2t"
-    
-    srcs = ["['Piotr_Hallmann | height | 175.26', 'Piotr_Hallmann | weight | 70.308']"]*1
-    refs = ["Piotr Hallmann is 175.26 cm tall and weighs 70.308 kg."]*1
-    outs = ["Piotr Hallmann has a height of 175.26 m and weights 70.308."]*1
+    task_type="mt_en-es"
+    refs=["Y hay una distinción muy importante allí que veremos."]
+    outs=["Y hay una distinción muy anormal allí que falta veremos."]
 
     scorer = InstructScore(device_id=device_id, task_type=task_type, batch_size=6)
     if task_type=="commonsense" or task_type=="d2t" or task_type == "key-to-text":
@@ -213,6 +217,7 @@ def main():
         batch_outputs, scores_ls = scorer.score(ref_ls=refs, out_ls=outs)
     print(batch_outputs)
     print(scores_ls)
+
 
 if __name__ == "__main__":
     main()
