@@ -4,13 +4,13 @@ from transformers import LlamaForCausalLM
 import torch
 import json
 from datasets import load_dataset
-from transformers import AutoConfig, Trainer, TrainingArguments
+from transformers import Trainer, TrainingArguments
 import copy
 from typing import Dict, Sequence
 import transformers
 from torch.utils.data import Dataset
 from dataclasses import dataclass
-import click
+import argparse
 
 """deepspeed --num_gpus 8 code/finetune_llama.py"""
 
@@ -22,13 +22,29 @@ DEFAULT_EOS_TOKEN = "</s>"
 DEFAULT_BOS_TOKEN = "</s>"
 DEFAULT_UNK_TOKEN = "</s>"
 
-ds_config = "config/ds_config_zero3.json"
+parser = argparse.ArgumentParser(description='Arguments to InstructScore training: deepspeed --num_gpus 8 code/finetune_llama.py')
+parser.add_argument('--ds_config', type=str, default="config/ds_config_zero3.json",
+                    help='location of deepspeed config json')
+parser.add_argument('--max_length', type=int, default=720,
+                    help='max length for the input token')
+parser.add_argument('--f', type=str, default="data/english_llama_ref_data.json",
+                    help='file address for the training data')
+parser.add_argument('--output_dir', type=str, default='weight_dir',
+                    help='output location for the weight')
+parser.add_argument('--padding_strategy', type=str, default="left",
+                    help='padding strategy: you can use left')
+parser.add_argument('--num_epoch', type=int, default=3,
+                    help='Number of epoch. For example, 3')
+parser.add_argument('--local_rank', type=int)
+args = parser.parse_args()
+
 do_train = True
-max_length = 720
-f = "data/english_llama_ref_data.json"
-output_dir = "/share/edc/home/wendaxu/finetune_llama_ref_2024"
-padding_strategy = "left"
-num_epoch = 5
+ds_config = args.ds_config 
+max_length = args.max_length
+f = args.f
+output_dir = args.output_dir 
+padding_strategy = args.padding_strategy
+num_epoch = args.num_epoch 
 
 class SupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""
@@ -183,6 +199,7 @@ def main():
 
     model = LlamaForCausalLM.from_pretrained("yahma/llama-7b-hf")
     print("Loaded in model and tokenizers")
+    
     if tokenizer.pad_token is None:
         smart_tokenizer_and_embedding_resize(
             special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
