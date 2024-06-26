@@ -50,20 +50,20 @@ class InstructScore:
                 "mistralai/Mistral-7B-v0.1", model_max_length=max_src_len, use_fast=False
             )
             self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_en-es", torch_dtype=torch.bfloat16, device_map="auto")
-        # elif task_type == 'mt_en-ru':
-        #     self.tokenizer = LlamaTokenizer.from_pretrained(
-        #         "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
-        #     )
-        #     self.model = LlamaForCausalLM.from_pretrained("/share/edc/home/wendaxu/finetune_llama_ref_russian_may_30_no_error/checkpoint-271").to(
-        #         device_id
-        #     )
-        # elif task_type == 'mt_en-de':
-        #     self.tokenizer = LlamaTokenizer.from_pretrained(
-        #         "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
-        #     )
-        #     self.model = LlamaForCausalLM.from_pretrained("/share/edc/home/wendaxu/finetune_llama_ref_german_may_30_no_error/checkpoint-272").to(
-        #         device_id
-        #     )
+        elif task_type == 'mt_en-ru':
+            self.tokenizer = LlamaTokenizer.from_pretrained(
+                "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
+            )
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_en-ru").to(
+                device_id
+            )
+        elif task_type == 'mt_en-de':
+            self.tokenizer = LlamaTokenizer.from_pretrained(
+                "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False
+            )
+            self.model = LlamaForCausalLM.from_pretrained("xu1998hz/instructscore_en-de").to(
+                device_id
+            )
         elif task_type == 'caption':
             self.tokenizer = LlamaTokenizer.from_pretrained(
                 "xu1998hz/InstructScore", model_max_length=max_src_len, use_fast=False

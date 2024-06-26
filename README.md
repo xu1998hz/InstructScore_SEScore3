@@ -53,6 +53,16 @@ outs = ["Usually when there is takeaway, the management office downstairs will c
 # refs = ["May I suggest the X? It is a moderately priced restaurant near X."]
 # outs = ["X is a restaurant in X with a moderately priced menu."]
 
+# Example input for English-to-German translation (Beta testing)
+# task_type="mt_en-de"
+# refs=["Warnung vor stürmischem Wetter, da starke Winde eine "Lebensgefahr" darstellen"]
+# outs=["Warnung vor stürmischem Wetter, da starke Winde Lebensgefahr darstellen können"]
+
+# Example input for English-to-Russian translation (Beta testing)
+# task_type="mt_en-ru"
+# refs=["Нет, вы не сможете ввести дату встречи, вам нужно будет разместить заказ, и тогда мы сможем отложить предметы для вас, мы можем отложить их сначала на три месяца"]
+# outs=["Нет, вы не сможете указать дату встречи, вам нужно будет оформить заказ, после чего мы сможем временно <v>приостановить производство</v> товаров для вас. Вначале мы можем отложить их на три месяца"]
+
 # Example input for English-to-Spanish translation (Beta testing)
 # task_type="mt_en-es"
 # refs=["Y hay una distinción muy importante allí que veremos."]
