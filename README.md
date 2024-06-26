@@ -7,10 +7,10 @@ An amazing explanation metric (diagnostic report) for text generation evaluation
 </div>
 
 ## Installation
-We list all required dependencies in requirements.txt. You can create a conda environment and install all dependencies through following commands:
+We list all required dependencies in requirements.txt. You can create a conda environment and install all dependencies through following commands (Higher python version is recommended):
 
 ```bash
-    conda create -n instructscore
+    conda create -n instructscore python=3.12
     conda activate instructscore
     pip install -r requirements.txt
 ```
