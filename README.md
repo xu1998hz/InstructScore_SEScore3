@@ -55,7 +55,7 @@ outs = ["Usually when there is takeaway, the management office downstairs will c
 
 # Example input for English-to-German translation (Beta testing)
 # task_type="mt_en-de"
-# refs=["Warnung vor stürmischem Wetter, da starke Winde eine "Lebensgefahr" darstellen"]
+# refs=["Warnung vor stürmischem Wetter, da starke Winde eine 'Lebensgefahr' darstellen"]
 # outs=["Warnung vor stürmischem Wetter, da starke Winde Lebensgefahr darstellen können"]
 
 # Example input for English-to-Russian translation (Beta testing)
