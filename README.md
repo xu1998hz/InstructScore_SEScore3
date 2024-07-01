@@ -68,7 +68,7 @@ outs = ["Usually when there is takeaway, the management office downstairs will c
 # refs=["Y hay una distinción muy importante allí que veremos."]
 # outs=["Y hay una distinción muy anormal allí que falta veremos."]
 
-scorer = InstructScore(device_id=device_id, task_type=task_type, batch_size=6)
+scorer = InstructScore(device_id=device_id, task_type=task_type, batch_size=6, cache_dir=None)
 if task_type=="commonsense" or task_type=="d2t" or task_type == "key-to-text":
     batch_outputs, scores_ls = scorer.score(ref_ls=refs, out_ls=outs, src_ls=srcs)
 else:
