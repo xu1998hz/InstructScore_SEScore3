@@ -47,7 +47,7 @@ class InstructScore:
             self.model = LlamaForCausalLM.from_pretrained("xu1998hz/InstructScore", cache_dir=cache_dir, torch_dtype=torch.bfloat16, device_map="auto")
         elif task_type == "mt_en-es":
             self.tokenizer = AutoTokenizer.from_pretrained(
-                "xu1998hz/instructscore_en-es", cache_dir=cache_dir, model_max_length=max_src_len, use_fast=False
+                "mistralai/Mistral-7B-v0.1", cache_dir=cache_dir, model_max_length=max_src_len, use_fast=False
             )
             self.model = AutoModelForCausalLM.from_pretrained("xu1998hz/instructscore_en-es", cache_dir=cache_dir, torch_dtype=torch.bfloat16, device_map="auto")
         elif task_type == 'mt_en-ru':
@@ -87,12 +87,15 @@ class InstructScore:
             exit(1)
 
         # enable batch inference by left padding
-        self.tokenizer.padding_side = "left"
+        if self.task_type != "mt_en-es":
+            self.tokenizer.padding_side = "left"
 
-        smart_tokenizer_and_embedding_resize(
-            special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
-            tokenizer=self.tokenizer,
-        )    
+            smart_tokenizer_and_embedding_resize(
+                special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
+                tokenizer=self.tokenizer,
+            )
+        else:
+            self.tokenizer.pad_token = self.tokenizer.eos_token    
         self.model.eval()
 
     def score(self, ref_ls, out_ls, src_ls=None):
