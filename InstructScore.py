@@ -86,10 +86,9 @@ class InstructScore:
             print("Task weights are not supported!")
             exit(1)
 
+        self.tokenizer.padding_side = "left"
         # enable batch inference by left padding
         if self.task_type != "mt_en-es":
-            self.tokenizer.padding_side = "left"
-
             smart_tokenizer_and_embedding_resize(
                 special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
                 tokenizer=self.tokenizer,
