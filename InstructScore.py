@@ -47,7 +47,7 @@ class InstructScore:
             self.model = LlamaForCausalLM.from_pretrained("xu1998hz/InstructScore", cache_dir=cache_dir, torch_dtype=torch.bfloat16, device_map="auto")
         elif task_type == "mt_en-es":
             self.tokenizer = AutoTokenizer.from_pretrained(
-                "mistralai/Mistral-7B-v0.1", cache_dir=cache_dir, model_max_length=max_src_len, use_fast=False
+                "xu1998hz/instructscore_en-es", cache_dir=cache_dir, model_max_length=max_src_len, use_fast=False
             )
             self.model = AutoModelForCausalLM.from_pretrained("xu1998hz/instructscore_en-es", cache_dir=cache_dir, torch_dtype=torch.bfloat16, device_map="auto")
         elif task_type == 'mt_en-ru':
